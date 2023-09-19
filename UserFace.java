@@ -3,9 +3,12 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
+import javax.swing.JToolBar;
 
 import java.awt.Dimension;
 import java.awt.GridLayout;
+
+import javafx.
 
 public class UserFace extends JPanel{
     public UserFace() {
@@ -38,4 +41,7 @@ public class UserFace extends JPanel{
             }
           });
     }
+
+    //future Camila look at this: https://careerkarma.com/blog/javafx-vs-java-swing/
+    
 }
