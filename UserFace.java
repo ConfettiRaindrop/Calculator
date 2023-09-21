@@ -8,7 +8,7 @@ import javax.swing.JToolBar;
 import java.awt.Dimension;
 import java.awt.GridLayout;
 
-import javafx.
+
 
 public class UserFace extends JPanel{
     public UserFace() {
@@ -23,7 +23,7 @@ public class UserFace extends JPanel{
     }
 
     public static void createAndShowGUI() {
-        JFrame frame = new JFrame("worldOfLife");
+        JFrame frame = new JFrame("(┬┬﹏┬┬)");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     
         UserFace newContentPane = new UserFace();
