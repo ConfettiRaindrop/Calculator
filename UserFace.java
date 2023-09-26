@@ -11,7 +11,7 @@ import javafx.stage.Stage;
 
 //https://fxdocs.github.io/docs/html5/#_timing
 
-public class UserFace extends Application{
+public class UserFace extends Application implements EventHandler<ActionEvent>{
 
     Button button;
     Button addition;
@@ -28,6 +28,8 @@ public class UserFace extends Application{
         addition = new Button();
         addition.setText("+");
 
+        button.setOnAction(this);
+
         StackPane layout = new StackPane();
         StackPane columnOne = new StackPane();
         StackPane columnTwo = new StackPane();
@@ -41,6 +43,13 @@ public class UserFace extends Application{
         Scene scene = new Scene(layout, 300, 600);
         primaryStage.setScene(scene);
         primaryStage.show();
+    }
+
+    @Override
+    public void handle(ActionEvent event ) {
+        if (event.getSource() == button) {
+            button.setText("osdhfsndaf");
+        }
     }
     
 } 
