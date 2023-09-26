@@ -21,7 +21,7 @@ public class UserFace extends Application{
     }
 
     public void start(Stage primaryStage) throws Exception {
-        primaryStage.setTitle("Calculator of Rage");
+        primaryStage.setTitle("Rage Against the Machine");
 
         button = new Button();
         button.setText("Rage Against the Machine");
