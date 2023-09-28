@@ -1,5 +1,4 @@
 
-import javafx.animation.TranslateTransition;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -9,7 +8,6 @@ import javafx.scene.control.Button;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
-import javafx.util.Duration;
 
 //https://fxdocs.github.io/docs/html5/#_timing
 
@@ -49,12 +47,14 @@ public class UserFace extends Application implements EventHandler<ActionEvent>{
         primaryStage.show();
 
         TranslateTransition translate = new TranslateTransition();  
-        translate.setNode(addition);
-        translate.setByX(400);
-        translate.setDuration(Duration.millis(1000));
-        translate.setCycleCount(500);  
+        translate.setNode(addition);  
         translate.setAutoReverse(true);  
-        translate.play();
+        translate.play()
+
+        addition.setOnMouseEntered(e -> {
+            translate.setbyX(300);
+            translate.setDuration(Duration.millis(1000));
+        });
     }
 
     @Override
