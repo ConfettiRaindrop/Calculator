@@ -45,6 +45,14 @@ public class UserFace extends Application implements EventHandler<ActionEvent>{
         Scene scene = new Scene(grid, 300, 600);
         primaryStage.setScene(scene);
         primaryStage.show();
+
+        TranslateTransition translate = new TranslateTransition();  
+        translate.setNode(addition);
+        translate.setbyX(400);
+        translate.setDuration(Duration.millis(1000));
+        translate.setCycleCount(500);  
+        translate.setAutoReverse(true);  
+        translate.play()
     }
 
     @Override
