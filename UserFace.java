@@ -14,7 +14,6 @@ import javafx.stage.Stage;
 public class UserFace extends Application implements EventHandler<ActionEvent>{
 
     Button button;
-    Button addition;
 
     public static void main(String[] args) {
         launch(args);
@@ -25,22 +24,25 @@ public class UserFace extends Application implements EventHandler<ActionEvent>{
 
         button = new Button();
         button.setText("Rage Against the Machine");
-        addition = new Button();
+        Button addition = new Button();
+        Button subtraction = new Button();
+        Button multiplication = new Button();
+        Button division = new Button();
         addition.setText("+");
+        subtraction.setText("-");
+        multiplication.setText("*");
+        division.setText("/");
 
         button.setOnAction(this);
 
-        StackPane layout = new StackPane();
-        StackPane columnOne = new StackPane();
-        StackPane columnTwo = new StackPane();
-        layout.getChildren().add(columnOne);
-        layout.getChildren().add(columnTwo);
-        GridPane gridPane = new GridPane();
-        columnOne.getChildren().add(gridPane);
-        gridPane.getChildren().add(button);
-        gridPane.getChildren().add(addition);
+        GridPane grid = new GridPane();
+    
+        grid.add(addition, 0, 0);
+        grid.add(subtraction, 0, 1);
+        grid.add(multiplication, 0, 2);
+        grid.add(division, 0, 3);
 
-        Scene scene = new Scene(layout, 300, 600);
+        Scene scene = new Scene(grid, 300, 600);
         primaryStage.setScene(scene);
         primaryStage.show();
     }
