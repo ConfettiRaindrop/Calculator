@@ -16,6 +16,31 @@ import javafx.util.Duration;
 public class UserFace extends Application implements EventHandler<ActionEvent>{
 
     Button button;
+    String input = "";
+
+    Button addition = new Button();
+    Button subtraction = new Button();
+    Button multiplication = new Button();
+    Button division = new Button();
+    Button equals = new Button();
+    Button zero = new Button();
+    Button one = new Button();
+    Button two = new Button();
+    Button three = new Button();
+    Button four = new Button();
+    Button five = new Button();
+    Button six = new Button();
+    Button seven = new Button();
+    Button eight = new Button();
+    Button nine = new Button();
+    Button sin = new Button();
+    Button cos = new Button();
+    Button tan = new Button();
+    Button root = new Button();
+    Button log = new Button();
+    Button exponent = new Button();
+    Button pi = new Button();
+    Button e = new Button();
 
     public static void main(String[] args) {
         launch(args);
@@ -26,30 +51,6 @@ public class UserFace extends Application implements EventHandler<ActionEvent>{
 
         button = new Button();
         button.setText("Rage Against the Machine");
-
-        Button addition = new Button();
-        Button subtraction = new Button();
-        Button multiplication = new Button();
-        Button division = new Button();
-        Button equals = new Button();
-        Button zero = new Button();
-        Button one = new Button();
-        Button two = new Button();
-        Button three = new Button();
-        Button four = new Button();
-        Button five = new Button();
-        Button six = new Button();
-        Button seven = new Button();
-        Button eight = new Button();
-        Button nine = new Button();
-        Button sin = new Button();
-        Button cos = new Button();
-        Button tan = new Button();
-        Button root = new Button();
-        Button log = new Button();
-        Button exponent = new Button();
-        Button pi = new Button();
-        Button e = new Button();
 
         addition.setText("+");
         subtraction.setText("-");
@@ -76,6 +77,29 @@ public class UserFace extends Application implements EventHandler<ActionEvent>{
         e.setText("e");
 
         button.setOnAction(this);
+        addition.setOnAction(this);
+        subtraction.setOnAction(this);
+        multiplication.setOnAction(this);
+        division.setOnAction(this);
+        equals.setOnAction(this);
+        zero.setOnAction(this);
+        one.setOnAction(this);
+        two.setOnAction(this);
+        three.setOnAction(this);
+        four.setOnAction(this);
+        five.setOnAction(this);
+        six.setOnAction(this);
+        seven.setOnAction(this);
+        eight.setOnAction(this);
+        nine.setOnAction(this);
+        sin.setOnAction(this);
+        cos.setOnAction(this);
+        tan.setOnAction(this);
+        root.setOnAction(this);
+        log.setOnAction(this);
+        exponent.setOnAction(this);
+        pi.setOnAction(this);
+        e.setOnAction(this);
 
         GridPane grid = new GridPane();
     
@@ -118,9 +142,12 @@ public class UserFace extends Application implements EventHandler<ActionEvent>{
     }
 
     @Override
-    public void handle(ActionEvent event ) {
-        if (event.getSource() == button) {
-            button.setText("osdhfsndaf");
+    public void handle(ActionEvent event) {
+        if (event.getSource() != equals) {
+            input += event.getSource().toString();
+            //input = input.substring(input.indexOf("'"), input.lastIndexOf("''"));
+            System.out.println("First Index: " + input.indexOf("'"));
+            System.out.println(input);
         }
     }
 
