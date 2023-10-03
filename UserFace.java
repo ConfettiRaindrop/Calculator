@@ -6,6 +6,7 @@ import javafx.event.EventHandler;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 import javafx.util.Duration;
@@ -44,6 +45,8 @@ public class UserFace extends Application implements EventHandler<ActionEvent>{
     Button openParentheses = new Button();
     Button closeParentheses = new Button();
 
+    Label textbox = new Label();
+
     public static void main(String[] args) {
         launch(args);
     }
@@ -69,9 +72,9 @@ public class UserFace extends Application implements EventHandler<ActionEvent>{
         seven.setText("7");
         eight .setText("8");
         nine.setText("9");
-        sin.setText("sin(x)");
-        cos.setText("cos(x)");
-        tan.setText("tan(x)");
+        sin.setText("sin");
+        cos.setText("cos");
+        tan.setText("tan");
         root.setText("√");
         log.setText("log");
         exponent.setText("^");
@@ -109,31 +112,34 @@ public class UserFace extends Application implements EventHandler<ActionEvent>{
 
         GridPane grid = new GridPane();
     
-        grid.add(addition, 3, 3);
-        grid.add(subtraction, 3, 4);
-        grid.add(multiplication, 3, 5);
-        grid.add(division, 3, 6);
-        grid.add(equals, 3, 7);
-        grid.add(sin, 0, 0);
-        grid.add(cos, 1, 0);
-        grid.add(tan, 2, 0);
-        grid.add(root, 0, 1);
-        grid.add(log, 1, 1);
-        grid.add(exponent, 2, 1);
-        grid.add(pi, 0, 2);
-        grid.add(e, 1, 2);
-        grid.add(openParentheses, 2, 2);
-        grid.add(closeParentheses, 3, 2);
-        grid.add(seven, 0, 3);
-        grid.add(eight, 1, 3);
-        grid.add(nine, 2, 3);
-        grid.add(four, 0, 4);
-        grid.add(five, 1, 4);
-        grid.add(six, 2, 4);
-        grid.add(one, 0, 5);
-        grid.add(two, 1, 5);
-        grid.add(three, 2, 5);
-        grid.add(zero, 1, 6);
+        grid.add(textbox, 0, 0);
+        grid.add(addition, 3, 4);
+        grid.add(subtraction, 3, 5);
+        grid.add(multiplication, 3, 6);
+        grid.add(division, 3, 7);
+        grid.add(equals, 3, 8);
+        grid.add(sin, 0, 1);
+        grid.add(cos, 1, 1);
+        grid.add(tan, 2, 1);
+        grid.add(root, 0, 2);
+        grid.add(log, 1, 2);
+        grid.add(exponent, 2, 2);
+        grid.add(pi, 0, 3);
+        grid.add(e, 1, 3);
+        grid.add(openParentheses, 2, 3);
+        grid.add(closeParentheses, 3, 3);
+        grid.add(seven, 0, 4);
+        grid.add(eight, 1, 4);
+        grid.add(nine, 2, 4);
+        grid.add(four, 0, 5);
+        grid.add(five, 1, 5);
+        grid.add(six, 2, 5);
+        grid.add(one, 0, 6);
+        grid.add(two, 1, 6);
+        grid.add(three, 2, 6);
+        grid.add(zero, 1, 7);
+
+        GridPane.setColumnSpan(textbox, 4);
 
         Scene scene = new Scene(grid, 300, 600);
         primaryStage.setScene(scene);
@@ -154,9 +160,7 @@ public class UserFace extends Application implements EventHandler<ActionEvent>{
         if (event.getSource() != equals) {
             String current_input = event.getSource().toString();
             input += event.getSource().toString().substring(current_input.indexOf("'") + 1, current_input.lastIndexOf("'"));
-            //input = input.substring(input.indexOf("'"), input.lastIndexOf("''"));
-            //System.out.println("First Index: " + input.indexOf("'"));
-            //System.out.println("Last Index: " + input.lastIndexOf("'"));
+            textbox.setText(input);
             System.out.println(input);
         } else if (event.getSource() == equals) {
             //send input to Sindhura's code
