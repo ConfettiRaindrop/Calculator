@@ -144,9 +144,11 @@ public class UserFace extends Application implements EventHandler<ActionEvent>{
     @Override
     public void handle(ActionEvent event) {
         if (event.getSource() != equals) {
-            input += event.getSource().toString();
+            String current_input = event.getSource().toString();
+            input += event.getSource().toString().substring(current_input.indexOf("'") + 1, current_input.lastIndexOf("'"));
             //input = input.substring(input.indexOf("'"), input.lastIndexOf("''"));
-            System.out.println("First Index: " + input.indexOf("'"));
+            //System.out.println("First Index: " + input.indexOf("'"));
+            //System.out.println("Last Index: " + input.lastIndexOf("'"));
             System.out.println(input);
         }
     }
