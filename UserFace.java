@@ -10,6 +10,7 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 import javafx.util.Duration;
+import java.util.Random;
 
 //https://fxdocs.github.io/docs/html5/#_timing
 
@@ -125,6 +126,50 @@ public class UserFace extends Application implements EventHandler<ActionEvent>{
     }
 
     public void move(TranslateTransition translate){
+        Random rand = new Random();
+        int randomNum = 2;
+
+        if (randomNum == 1) {
+            translate.setByY(100);
+            translate.setDuration(Duration.millis(50));
+            translate.play();
+        }
+        else if (randomNum == 2){
+            translate.setByX(-100);
+            translate.setByY(-100);
+            translate.setDuration(Duration.millis(1000));
+            translate.play();
+        }
+        else if (randomNum == 3){
+            translate.setByX(300);
+            translate.setDuration(Duration.millis(1000));
+            translate.play();
+        }
+        else if (randomNum == 4){
+            translate.setByX(300);
+            translate.setDuration(Duration.millis(1000));
+            translate.play();
+        }
+        else if (randomNum == 5){
+            translate.setByX(300);
+            translate.setDuration(Duration.millis(1000));
+            translate.play();
+        }
+        else if (randomNum == 6){
+            translate.setByX(300);
+            translate.setDuration(Duration.millis(1000));
+            translate.play();
+        }
+        else if (randomNum == 7){
+            translate.setByX(300);
+            translate.setDuration(Duration.millis(1000));
+            translate.play();
+        }
+        else if (randomNum == 8){
+            translate.setByX(300);
+            translate.setDuration(Duration.millis(1000));
+            translate.play();
+        }
         translate.setByX(300);
         translate.setDuration(Duration.millis(1000));
         translate.play();

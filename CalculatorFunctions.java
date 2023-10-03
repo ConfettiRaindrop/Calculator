@@ -1,9 +1,10 @@
 import java.util.HashMap;
 
-public class CalculatorFunctions (){
+public class CalculatorFunctions {
+    HashMap<String, Double> stored_values;
 
     public CalculatorFunctions() {
-        HashMap<String, double> stored_values = new HashMap<String, Double>();
+        this.stored_values = new HashMap<String, Double>();
     }
 
     public static double summ(double a, double b){
@@ -42,12 +43,12 @@ public class CalculatorFunctions (){
         return Math.tan(a);
     }
 
-    public static void store(String s, double a){
-        this.stored_values.remove(s);
-        this.stored_values.put(s, a);
+    public void store(String s, double a){
+        stored_values.remove(s);
+        stored_values.put(s, a);
     }
 
-    public static double get_stored_value(String s){
+    public double get_stored_value(String s){
         return stored_values.get(s);
     }
 
