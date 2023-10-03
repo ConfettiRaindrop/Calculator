@@ -3,9 +3,11 @@ import javafx.animation.TranslateTransition;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
+import javafx.geometry.Insets;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
@@ -18,6 +20,34 @@ public class UserFace extends Application implements EventHandler<ActionEvent>{
 
     Button button;
 
+    Button addition = new Button();
+    Button subtraction = new Button();
+    Button multiplication = new Button();
+    Button division = new Button();
+    Button equals = new Button();
+    Button zero = new Button();
+    Button one = new Button();
+    Button two = new Button();
+    Button three = new Button();
+    Button four = new Button();
+    Button five = new Button();
+    Button six = new Button();
+    Button seven = new Button();
+    Button eight = new Button();
+    Button nine = new Button();
+    Button sin = new Button();
+    Button cos = new Button();
+    Button tan = new Button();
+    Button root = new Button();
+    Button log = new Button();
+    Button exponent = new Button();
+    Button pi = new Button();
+    Button e = new Button();
+
+    Label textbox = new Label();
+
+    String input = "";
+
     public static void main(String[] args) {
         launch(args);
     }
@@ -27,30 +57,6 @@ public class UserFace extends Application implements EventHandler<ActionEvent>{
 
         button = new Button();
         button.setText("Rage Against the Machine");
-
-        Button addition = new Button();
-        Button subtraction = new Button();
-        Button multiplication = new Button();
-        Button division = new Button();
-        Button equals = new Button();
-        Button zero = new Button();
-        Button one = new Button();
-        Button two = new Button();
-        Button three = new Button();
-        Button four = new Button();
-        Button five = new Button();
-        Button six = new Button();
-        Button seven = new Button();
-        Button eight = new Button();
-        Button nine = new Button();
-        Button sin = new Button();
-        Button cos = new Button();
-        Button tan = new Button();
-        Button root = new Button();
-        Button log = new Button();
-        Button exponent = new Button();
-        Button pi = new Button();
-        Button e = new Button();
 
         addition.setText("+");
         subtraction.setText("-");
@@ -77,32 +83,61 @@ public class UserFace extends Application implements EventHandler<ActionEvent>{
         e.setText("e");
 
         button.setOnAction(this);
+        addition.setOnAction(this);
+        subtraction.setOnAction(this);
+        multiplication.setOnAction(this);
+        division.setOnAction(this);
+        equals.setOnAction(this);
+        zero.setOnAction(this);
+        one.setOnAction(this);
+        two.setOnAction(this);
+        three.setOnAction(this);
+        four.setOnAction(this);
+        five.setOnAction(this);
+        six.setOnAction(this);
+        seven.setOnAction(this);
+        eight.setOnAction(this);
+        nine.setOnAction(this);
+        six.setOnAction(this);
+        cos.setOnAction(this);
+        tan.setOnAction(this);
+        root.setOnAction(this);
+        log.setOnAction(this);
+        exponent.setOnAction(this);
+        pi.setOnAction(this);
+        e.setOnAction(this);
 
         GridPane grid = new GridPane();
+        grid.setPadding(new Insets(5));
+        grid.setHgap(5);
+        grid.setVgap(8);
     
-        grid.add(addition, 3, 3);
-        grid.add(subtraction, 3, 4);
-        grid.add(multiplication, 3, 5);
-        grid.add(division, 3, 6);
-        grid.add(equals, 3, 7);
-        grid.add(sin, 0, 0);
-        grid.add(cos, 1, 0);
-        grid.add(tan, 2, 0);
-        grid.add(root, 0, 1);
-        grid.add(log, 1, 1);
-        grid.add(exponent, 2, 1);
-        grid.add(pi, 0, 2);
-        grid.add(e, 1, 2);
-        grid.add(seven, 0, 3);
-        grid.add(eight, 1, 3);
-        grid.add(nine, 2, 3);
-        grid.add(four, 0, 4);
-        grid.add(five, 1, 4);
-        grid.add(six, 2, 4);
-        grid.add(one, 0, 5);
-        grid.add(two, 1, 5);
-        grid.add(three, 2, 5);
-        grid.add(zero, 1, 6);
+        grid.add(textbox, 0, 0);
+        grid.add(addition, 3, 4);
+        grid.add(subtraction, 3, 5);
+        grid.add(multiplication, 3, 6);
+        grid.add(division, 3, 7);
+        grid.add(equals, 3, 8);
+        grid.add(sin, 0, 1);
+        grid.add(cos, 1, 1);
+        grid.add(tan, 2, 1);
+        grid.add(root, 0, 2);
+        grid.add(log, 1, 2);
+        grid.add(exponent, 2, 2);
+        grid.add(pi, 0, 3);
+        grid.add(e, 1, 3);
+        grid.add(seven, 0, 4);
+        grid.add(eight, 1, 4);
+        grid.add(nine, 2, 4);
+        grid.add(four, 0, 5);
+        grid.add(five, 1, 5);
+        grid.add(six, 2, 5);
+        grid.add(one, 0, 6);
+        grid.add(two, 1, 6);
+        grid.add(three, 2, 6);
+        grid.add(zero, 1, 7);
+
+        GridPane.setColumnSpan(textbox, 4);
 
         Scene scene = new Scene(grid, 300, 600);
         primaryStage.setScene(scene);
@@ -228,8 +263,11 @@ public class UserFace extends Application implements EventHandler<ActionEvent>{
 
     @Override
     public void handle(ActionEvent event ) {
-        if (event.getSource() == button) {
-            button.setText("osdhfsndaf");
+        if (event.getSource() != equals) {
+            String currentInput = event.getSource().toString();
+            input = currentInput.substring(currentInput.indexOf("'"), currentInput.lastIndexOf("'"));
+            textbox.setText(input);
+            System.out.println(input);
         }
     }
 

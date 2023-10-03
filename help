@@ -1,0 +1,245 @@
+[33mcommit 29086d50911e70c9fae56b046397f84102b171a1[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: ConfettiRaindrop <camilafigueira@outlook.com>
+Date:   Tue Oct 3 13:11:20 2023 -0700
+
+    remove extra code, add puns
+
+[33mcommit 1e0ed6f8bc6108a4010148013df543e777440bf5[m
+Author: Sindhura-Satti <89949740+Sindhura-Satti@users.noreply.github.com>
+Date:   Tue Oct 3 20:08:30 2023 +0000
+
+    hey im back
+
+[33mcommit 308446c375dfd652c50782250395bb809831e0ef[m
+Author: ConfettiRaindrop <camilafigueira@outlook.com>
+Date:   Tue Oct 3 12:50:38 2023 -0700
+
+    add textpane, reorg grid
+
+[33mcommit afc25c0dbc51b9f07daedddb5548a1d71482f37c[m
+Merge: 76750e4 740565a
+Author: Sofiya_Chubich <sofiachubich@gmail.com>
+Date:   Tue Oct 3 12:42:48 2023 -0700
+
+    Merge branch 'main' of https://github.com/ConfettiRaindrop/Calculator
+
+[33mcommit 76750e4d19c6644a33e335462e38ba00b2c3b0c8[m
+Author: Sofiya_Chubich <sofiachubich@gmail.com>
+Date:   Tue Oct 3 12:42:25 2023 -0700
+
+    more movement
+
+[33mcommit 740565a6e2d0416f026682a94e21846234f1ecfc[m
+Author: ConfettiRaindrop <camilafigueira@outlook.com>
+Date:   Tue Oct 3 12:35:35 2023 -0700
+
+    add parantheses and remove extra code
+
+[33mcommit 1d3f2a38210aefc46760f762d71131b585f0dd21[m
+Author: ConfettiRaindrop <camilafigueira@outlook.com>
+Date:   Tue Oct 3 12:27:20 2023 -0700
+
+    get user input into string
+
+[33mcommit a0f38c3570818324e49fb925f04311acf5d959db[m
+Author: ConfettiRaindrop <camilafigueira@outlook.com>
+Date:   Mon Oct 2 13:29:55 2023 -0700
+
+    add onclick events
+
+[33mcommit 72e3a47c5c53eeee3d48fb856b286efd74900e33[m
+Author: ConfettiRaindrop <camilafigueira@outlook.com>
+Date:   Thu Sep 28 13:44:19 2023 -0700
+
+    create buttons and add to grid
+
+[33mcommit c4d73c21549861aebc8b66f18b8166504f8e8ce3[m
+Author: ConfettiRaindrop <camilafigueira@outlook.com>
+Date:   Thu Sep 28 13:24:53 2023 -0700
+
+    Sofiya did all the code in this commit, created move method
+
+[33mcommit 3ebf9abe1afa9021407d365166ab094b18d27ee9[m
+Merge: cbfa0d3 a2f09ad
+Author: Sofiya_Chubich <sofiachubich@gmail.com>
+Date:   Thu Sep 28 13:07:18 2023 -0700
+
+    Merge branch 'main' of https://github.com/ConfettiRaindrop/Calculator
+
+[33mcommit cbfa0d36f942c7571863cf29b83d6b7fd9e74f91[m
+Author: Sofiya_Chubich <sofiachubich@gmail.com>
+Date:   Thu Sep 28 13:06:39 2023 -0700
+
+    Try #2
+
+[33mcommit a2f09add3bfebfc96f66709ce209d8b301308203[m
+Author: ConfettiRaindrop <camilafigueira@outlook.com>
+Date:   Thu Sep 28 13:05:16 2023 -0700
+
+    future plans
+
+[33mcommit 01da95744e66ad8b64e1b1250b9f8f2b31503bfd[m
+Author: ConfettiRaindrop <camilafigueira@outlook.com>
+Date:   Thu Sep 28 12:52:29 2023 -0700
+
+    fix syntax add commit
+
+[33mcommit 59f5fd72acf46800435a711d45fd2cc71c27e315[m
+Author: CHUBICH <s-schubich@lwsd.org>
+Date:   Thu Sep 28 12:48:32 2023 -0700
+
+    WUSSUp
+
+[33mcommit d31a7d6840899b82876b841d5563e27863c5cff3[m
+Author: ConfettiRaindrop <camilafigueira@outlook.com>
+Date:   Thu Sep 28 12:22:35 2023 -0700
+
+    add basic buttons + pun
+
+[33mcommit e655359cc1a2d2965c1e54062051cf13a6a87636[m
+Author: ConfettiRaindrop <camilafigueira@outlook.com>
+Date:   Tue Sep 26 13:45:13 2023 -0700
+
+    btton on event
+
+[33mcommit be88e7c0655131d3d6431fcbfd780726bd662259[m
+Merge: 6452a4c 7874505
+Author: Sindhura-Satti <s-ssatti@lwsd.org>
+Date:   Tue Sep 26 13:34:49 2023 -0700
+
+    Merge branch 'main' of https://github.com/ConfettiRaindrop/Calculator
+
+[33mcommit 6452a4c9b494b2a50236ed3b7bf19965753eb025[m
+Author: Sindhura-Satti <s-ssatti@lwsd.org>
+Date:   Tue Sep 26 13:34:22 2023 -0700
+
+    new file pour moi
+
+[33mcommit 7874505697d57652b8c2b27ed6939be059377028[m
+Author: ConfettiRaindrop <camilafigueira@outlook.com>
+Date:   Tue Sep 26 13:31:16 2023 -0700
+
+    ( •_•)>⌐■-■  (⌐■_■)
+
+[33mcommit 310ec907aacb793473f1da5624f3325f8acef324[m
+Author: ConfettiRaindrop <camilafigueira@outlook.com>
+Date:   Tue Sep 26 13:27:30 2023 -0700
+
+    test buttons add docupun
+
+[33mcommit a5680c16c4cb3ca1eb092f8a1b40bb22b39ae8b2[m
+Merge: c4b1e58 d000d4a
+Author: ConfettiRaindrop <camilafigueira@outlook.com>
+Date:   Tue Sep 26 13:14:37 2023 -0700
+
+    Merge branch 'main' of https://github.com/ConfettiRaindrop/Calculator
+
+[33mcommit c4b1e58835b8ce050cf096101c55edfbc7c0de9d[m
+Author: ConfettiRaindrop <camilafigueira@outlook.com>
+Date:   Tue Sep 26 13:14:11 2023 -0700
+
+    add button, start gridLayout
+
+[33mcommit d000d4afbf895275114fd70a35ac2e2f15cf3080[m
+Author: Sofiya Chubich <95042138+SofiyaChubich@users.noreply.github.com>
+Date:   Tue Sep 26 13:08:23 2023 -0700
+
+    Update CalculatorFunctions.java
+
+[33mcommit a5dd37de15fc72447adba7b5fea86135889bcba4[m
+Merge: c0bb97e 59335f3
+Author: ConfettiRaindrop <camilafigueira@outlook.com>
+Date:   Tue Sep 26 12:41:40 2023 -0700
+
+    Merge branch 'main' of https://github.com/ConfettiRaindrop/Calculator
+
+[33mcommit 59335f3f837d03ffdefc205ffdcb5df06f1f6029[m
+Author: Sofiya Chubich <95042138+SofiyaChubich@users.noreply.github.com>
+Date:   Tue Sep 26 12:41:33 2023 -0700
+
+    You will be missed soldier
+
+[33mcommit c0bb97e554864285ee20239138a6e64c221165cc[m
+Author: ConfettiRaindrop <camilafigueira@outlook.com>
+Date:   Tue Sep 26 12:41:17 2023 -0700
+
+    set up base for fx
+
+[33mcommit 8f0899bd2305571b09f90faed1aae577c35c28c7[m
+Author: ConfettiRaindrop <camilafigueira@outlook.com>
+Date:   Tue Sep 26 12:19:13 2023 -0700
+
+    fix imports
+
+[33mcommit b2dc72f44bcaa57afba59aadd17d26c35fa89c25[m
+Author: ConfettiRaindrop <camilafigueira@outlook.com>
+Date:   Mon Sep 25 13:28:39 2023 -0700
+
+    delete swing code
+
+[33mcommit d243885d487ce58414ce74e8bd9bd02a44773dee[m
+Author: ConfettiRaindrop <camilafigueira@outlook.com>
+Date:   Thu Sep 21 13:44:37 2023 -0700
+
+    comment out swing, add fx documentation
+
+[33mcommit e0133028a72bb213c7234dcc6055678b0b489e26[m
+Merge: b733986 ddef402
+Author: ConfettiRaindrop <camilafigueira@outlook.com>
+Date:   Thu Sep 21 12:59:58 2023 -0700
+
+    Merge branch 'main' of https://github.com/ConfettiRaindrop/Calculator
+
+[33mcommit b733986b685b15b874b66bff4f8fc0309301f633[m
+Author: ConfettiRaindrop <camilafigueira@outlook.com>
+Date:   Thu Sep 21 12:59:45 2023 -0700
+
+    add fx imports
+
+[33mcommit ddef40247d23bd90b8ad105199fb88da5ae7bd91[m
+Author: Sofiya Chubich <95042138+SofiyaChubich@users.noreply.github.com>
+Date:   Thu Sep 21 19:59:19 2023 +0000
+
+    the m stays
+
+[33mcommit 7b6161f6d186b8ce10589fd0b8cba26b6da728a4[m
+Author: Sofiya Chubich <95042138+SofiyaChubich@users.noreply.github.com>
+Date:   Thu Sep 21 12:17:03 2023 -0700
+
+    Create CalculatorFunctions.java
+
+[33mcommit 268c989ef7838ed08bdc6f163cd67c6645dab411[m
+Author: Sofiya Chubich <95042138+SofiyaChubich@users.noreply.github.com>
+Date:   Thu Sep 21 12:15:33 2023 -0700
+
+    Create main.py
+
+[33mcommit d285e2e197db6437cc4d52cb699e784a5e40f307[m
+Author: ConfettiRaindrop <camilafigueira@outlook.com>
+Date:   Tue Sep 19 13:45:34 2023 -0700
+
+    added extra import
+
+[33mcommit d99a7d7e6138510319b77ac5db94725235910179[m
+Author: ConfettiRaindrop <camilafigueira@outlook.com>
+Date:   Tue Sep 19 13:27:29 2023 -0700
+
+    Add GUI code from GameOfLife and change dimensions + add GUI plans
+
+[33mcommit 0cb23fb9e60d25ce69f29bacf1cfcafbc897f310[m
+Author: ConfettiRaindrop <camilafigueira@outlook.com>
+Date:   Tue Sep 19 13:11:08 2023 -0700
+
+    Add imports
+
+[33mcommit 0fa1a7a0878a1469dc329d3248f3e6db24ee4c3c[m
+Author: ConfettiRaindrop <camilafigueira@outlook.com>
+Date:   Mon Sep 18 13:29:55 2023 -0700
+
+    Design doc 1st draft
+
+[33mcommit 5136841155391e9a13197aade3b5216c13d6ecb1[m
+Author: Camila Figueira <60558085+ConfettiRaindrop@users.noreply.github.com>
+Date:   Mon Sep 18 13:19:20 2023 -0700
+
+    Initial commit
