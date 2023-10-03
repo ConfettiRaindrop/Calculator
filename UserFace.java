@@ -7,7 +7,6 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.layout.GridPane;
-import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
@@ -41,6 +40,8 @@ public class UserFace extends Application implements EventHandler<ActionEvent>{
     Button exponent = new Button();
     Button pi = new Button();
     Button e = new Button();
+    Button openParentheses = new Button();
+    Button closeParentheses = new Button();
 
     public static void main(String[] args) {
         launch(args);
@@ -75,6 +76,8 @@ public class UserFace extends Application implements EventHandler<ActionEvent>{
         exponent.setText("^");
         pi.setText("π");
         e.setText("e");
+        openParentheses.setText("(");
+        closeParentheses.setText(")");
 
         button.setOnAction(this);
         addition.setOnAction(this);
@@ -100,6 +103,8 @@ public class UserFace extends Application implements EventHandler<ActionEvent>{
         exponent.setOnAction(this);
         pi.setOnAction(this);
         e.setOnAction(this);
+        openParentheses.setOnAction(this);
+        closeParentheses.setOnAction(this);
 
         GridPane grid = new GridPane();
     
@@ -116,6 +121,8 @@ public class UserFace extends Application implements EventHandler<ActionEvent>{
         grid.add(exponent, 2, 1);
         grid.add(pi, 0, 2);
         grid.add(e, 1, 2);
+        grid.add(openParentheses, 2, 2);
+        grid.add(closeParentheses, 3, 2);
         grid.add(seven, 0, 3);
         grid.add(eight, 1, 3);
         grid.add(nine, 2, 3);
@@ -150,6 +157,8 @@ public class UserFace extends Application implements EventHandler<ActionEvent>{
             //System.out.println("First Index: " + input.indexOf("'"));
             //System.out.println("Last Index: " + input.lastIndexOf("'"));
             System.out.println(input);
+        } else if (event.getSource() == equals) {
+            //send input to Sindhura's code
         }
     }
 
