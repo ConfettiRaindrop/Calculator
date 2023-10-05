@@ -197,75 +197,86 @@ public class UserFace extends Application implements EventHandler<ActionEvent>{
         translate_log.setNode(log);
         TranslateTransition translate_exponent = new TranslateTransition();  
         translate_exponent.setNode(exponent);
+        TranslateTransition translate_openParentheses = new TranslateTransition();
+        translate_openParentheses.setNode(openParentheses);
+        TranslateTransition translate_closeParentheses = new TranslateTransition();
+        translate_closeParentheses.setNode(closeParentheses);
+
 
         addition.setOnMouseEntered(event -> {
-            move(translate_addition);
+            move(translate_addition, addition);
             });
         subtraction.setOnMouseEntered(event -> {
-            move(translate_subtraction);
+            move(translate_subtraction, subtraction);
             });
         multiplication.setOnMouseEntered(event -> {
-            move(translate_multiplication);
+            move(translate_multiplication, multiplication);
             });
         division.setOnMouseEntered(event -> {
-            move(translate_division);
+            move(translate_division, division);
             }); 
         one.setOnMouseEntered(event -> {
-            move(translate_one);
+            move(translate_one, one);
             }); 
         two.setOnMouseEntered(event -> {
-            move(translate_two);
+            move(translate_two, two);
             }); 
         three.setOnMouseEntered(event -> {
-            move(translate_three);
+            move(translate_three, three);
             }); 
         four.setOnMouseEntered(event -> {
-            move(translate_four);
+            move(translate_four, four);
             }); 
         five.setOnMouseEntered(event -> {
-            move(translate_five);
+            move(translate_five, five);
             }); 
         six.setOnMouseEntered(event -> {
-            move(translate_six);
+            move(translate_six, six);
             }); 
         seven.setOnMouseEntered(event -> {
-            move(translate_seven);
+            move(translate_seven, seven);
             }); 
         eight.setOnMouseEntered(event -> {
-            move(translate_eight);
+            move(translate_eight, eight);
             }); 
         nine.setOnMouseEntered(event -> {
-            move(translate_nine);
+            move(translate_nine, nine);
             }); 
         zero.setOnMouseEntered(event -> {
-            move(translate_zero);
+            move(translate_zero, zero);
             }); 
         equals.setOnMouseEntered(event -> {
-            move(translate_equals);
+            move(translate_equals, equals);
             }); 
         sin.setOnMouseEntered(event -> {
-            move(translate_sin);
+            move(translate_sin, sin);
             }); 
         cos.setOnMouseEntered(event -> {
-            move(translate_cos);
+            move(translate_cos, cos);
             }); 
         tan.setOnMouseEntered(event -> {
-            move(translate_tan);
+            move(translate_tan, tan);
             }); 
         e.setOnMouseEntered(event -> {
-            move(translate_e);
+            move(translate_e, e);
             }); 
         exponent.setOnMouseEntered(event -> {
-            move(translate_exponent);
+            move(translate_exponent, exponent);
             }); 
         pi.setOnMouseEntered(event -> {
-            move(translate_pi);
+            move(translate_pi, pi);
             }); 
         log.setOnMouseEntered(event -> {
-            move(translate_log);
+            move(translate_log, log);
             }); 
         root.setOnMouseEntered(event -> {
-            move(translate_root);
+            move(translate_root, root);
+            });
+        openParentheses.setOnMouseEntered(event -> {
+            move(translate_openParentheses, openParentheses);
+            });
+        closeParentheses.setOnMouseEntered(event -> {
+            move(translate_closeParentheses, closeParentheses);
             });
     }
 
@@ -283,13 +294,17 @@ public class UserFace extends Application implements EventHandler<ActionEvent>{
         }
     }
 
-    public void move(TranslateTransition translate){
+    public void move(TranslateTransition translate, Button btn){
         Random rand = new Random();
 
-        translate.setToX(rand.nextInt((300) + 1));
-        translate.setToY(rand.nextInt((600) + 1));
+        translate.setToX(rand.nextInt((120) + 1));
+        translate.setToY(rand.nextInt((390) + 1));
         translate.setDuration(Duration.millis(50));
         translate.play();
+    }
+
+    public void checkCollision(){
+
     }
     
 } 
