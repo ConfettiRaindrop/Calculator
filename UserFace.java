@@ -285,14 +285,14 @@ public class UserFace extends Application implements EventHandler<ActionEvent>{
             textbox.setText(input);
             System.out.println(input);
         }
-        if (event.getSource() == openParentheses) {
+        if (event.getSource() == pun) {
             System.out.println(openParentheses.getLayoutX());
             System.out.println(scene.getHeight() + "| height");
             System.out.println(scene.getWidth() + "| width");
             System.out.println(scene.getX() + "| x");
             System.out.println(scene.getY() + "| y");
         }
-        if (event.getSource() == closeParentheses) {
+        if (event.getSource() == translate) {
             System.out.println(openParentheses.getLayoutX());
             System.out.println(scene.getHeight() + "| height");
             System.out.println(scene.getWidth() + "| width");
