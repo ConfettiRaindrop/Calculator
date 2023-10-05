@@ -43,11 +43,13 @@ public class UserFace extends Application implements EventHandler<ActionEvent>{
     Button e = new Button();
     Button openParentheses = new Button();
     Button closeParentheses = new Button();
+    Button pun = new Button();
+    Button translate = new Button();
 
     Button[] allButtons = {addition, subtraction, multiplication, division, equals,
                             zero, one, two, three, four, five, six, seven, eight, 
                             nine, sin, cos, tan, root, log, exponent, pi, e, 
-                            openParentheses, closeParentheses};
+                            openParentheses, closeParentheses, pun, translate};
 
     Label textbox = new Label();
 
@@ -85,6 +87,8 @@ public class UserFace extends Application implements EventHandler<ActionEvent>{
         e.setText("e");
         openParentheses.setText("(");
         closeParentheses.setText(")");
+        pun.setText("pun");
+        translate.setText("translate");
 
         addition.setOnAction(this);
         subtraction.setOnAction(this);
@@ -111,6 +115,8 @@ public class UserFace extends Application implements EventHandler<ActionEvent>{
         e.setOnAction(this);
         openParentheses.setOnAction(this);
         closeParentheses.setOnAction(this);
+        pun.setOnAction(this);
+        translate.setOnAction(this);
 
         GridPane grid = new GridPane();
         grid.setPadding(new Insets(5));
@@ -126,6 +132,8 @@ public class UserFace extends Application implements EventHandler<ActionEvent>{
         grid.add(sin, 0, 1);
         grid.add(cos, 1, 1);
         grid.add(tan, 2, 1);
+        grid.add(pun, 3, 1);
+        grid.add(translate, 4, 1);
         grid.add(root, 0, 2);
         grid.add(log, 1, 2);
         grid.add(exponent, 2, 2);
@@ -144,7 +152,7 @@ public class UserFace extends Application implements EventHandler<ActionEvent>{
         grid.add(three, 2, 6);
         grid.add(zero, 1, 7);
 
-        GridPane.setColumnSpan(textbox, 4);
+        GridPane.setColumnSpan(textbox, 5);
 
         scene = new Scene(grid, 300, 600);
         primaryStage.setScene(scene);
@@ -279,7 +287,17 @@ public class UserFace extends Application implements EventHandler<ActionEvent>{
         }
         if (event.getSource() == openParentheses) {
             System.out.println(openParentheses.getLayoutX());
-            
+            System.out.println(scene.getHeight() + "| height");
+            System.out.println(scene.getWidth() + "| width");
+            System.out.println(scene.getX() + "| x");
+            System.out.println(scene.getY() + "| y");
+        }
+        if (event.getSource() == closeParentheses) {
+            System.out.println(openParentheses.getLayoutX());
+            System.out.println(scene.getHeight() + "| height");
+            System.out.println(scene.getWidth() + "| width");
+            System.out.println(scene.getX() + "| x");
+            System.out.println(scene.getY() + "| y");
         }
     }
 
