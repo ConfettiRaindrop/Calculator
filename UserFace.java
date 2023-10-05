@@ -13,11 +13,13 @@ import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 import java.util.Random;
+import javafx.stage.Stage;
 
 //https://fxdocs.github.io/docs/html5/#_timing
 
 public class UserFace extends Application implements EventHandler<ActionEvent>{
 
+    Scene scene;
 
     Button addition = new Button();
     Button subtraction = new Button();
@@ -147,8 +149,9 @@ public class UserFace extends Application implements EventHandler<ActionEvent>{
 
         GridPane.setColumnSpan(textbox, 4);
 
-        Scene scene = new Scene(grid, 300, 600);
+        scene = new Scene(grid, 300, 600);
         primaryStage.setScene(scene);
+        primaryStage.setResizable(false);
         primaryStage.show();
 
         TranslateTransition translate_addition = new TranslateTransition();  
@@ -276,6 +279,10 @@ public class UserFace extends Application implements EventHandler<ActionEvent>{
             input += event.getSource().toString().substring(currentInput.indexOf("'") + 1, currentInput.lastIndexOf("'"));
             textbox.setText(input);
             System.out.println(input);
+        }
+        if (event.getSource() == openParentheses) {
+            System.out.println(openParentheses.getLayoutX());
+            
         }
     }
 
