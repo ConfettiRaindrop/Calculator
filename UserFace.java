@@ -18,7 +18,6 @@ import java.util.Random;
 
 public class UserFace extends Application implements EventHandler<ActionEvent>{
 
-    Button button;
 
     Button addition = new Button();
     Button subtraction = new Button();
@@ -43,6 +42,13 @@ public class UserFace extends Application implements EventHandler<ActionEvent>{
     Button exponent = new Button();
     Button pi = new Button();
     Button e = new Button();
+    Button openParentheses = new Button();
+    Button closeParentheses = new Button();
+
+    Button[] allButtons = {addition, subtraction, multiplication, division, equals,
+                            zero, one, two, three, four, five, six, seven, eight, 
+                            nine, sin, cos, tan, root, log, exponent, pi, e, 
+                            openParentheses, closeParentheses};
 
     Label textbox = new Label();
 
@@ -54,9 +60,6 @@ public class UserFace extends Application implements EventHandler<ActionEvent>{
 
     public void start(Stage primaryStage) throws Exception {
         primaryStage.setTitle("Rage Against the Machine");
-
-        button = new Button();
-        button.setText("Rage Against the Machine");
 
         addition.setText("+");
         subtraction.setText("-");
@@ -81,8 +84,9 @@ public class UserFace extends Application implements EventHandler<ActionEvent>{
         exponent.setText("^");
         pi.setText("π");
         e.setText("e");
+        openParentheses.setText("(");
+        closeParentheses.setText(")");
 
-        button.setOnAction(this);
         addition.setOnAction(this);
         subtraction.setOnAction(this);
         multiplication.setOnAction(this);
@@ -106,6 +110,8 @@ public class UserFace extends Application implements EventHandler<ActionEvent>{
         exponent.setOnAction(this);
         pi.setOnAction(this);
         e.setOnAction(this);
+        openParentheses.setOnAction(this);
+        closeParentheses.setOnAction(this);
 
         GridPane grid = new GridPane();
         grid.setPadding(new Insets(5));
@@ -126,6 +132,8 @@ public class UserFace extends Application implements EventHandler<ActionEvent>{
         grid.add(exponent, 2, 2);
         grid.add(pi, 0, 3);
         grid.add(e, 1, 3);
+        grid.add(openParentheses, 2, 3);
+        grid.add(closeParentheses, 3, 3);
         grid.add(seven, 0, 4);
         grid.add(eight, 1, 4);
         grid.add(nine, 2, 4);
@@ -265,7 +273,7 @@ public class UserFace extends Application implements EventHandler<ActionEvent>{
     public void handle(ActionEvent event ) {
         if (event.getSource() != equals) {
             String currentInput = event.getSource().toString();
-            input = currentInput.substring(currentInput.indexOf("'"), currentInput.lastIndexOf("'"));
+            input += event.getSource().toString().substring(currentInput.indexOf("'") + 1, currentInput.lastIndexOf("'"));
             textbox.setText(input);
             System.out.println(input);
         }
