@@ -290,11 +290,45 @@ public class UserFace extends Application implements EventHandler<ActionEvent>{
 
     @Override
     public void handle(ActionEvent event ) {
-        if (event.getSource() != equals) {
+        if (event.getSource() != equals && event.getSource() != pun && event.getSource() != translate) {
             String currentInput = event.getSource().toString();
             input += event.getSource().toString().substring(currentInput.indexOf("'") + 1, currentInput.lastIndexOf("'"));
             textbox.setText(input);
             System.out.println(input);
+        } else if (event.getSource() == translate) {
+            Random rand = new Random();
+            int lang = rand.nextInt(6);
+            switch (lang) {
+                case 0: //english
+                    translate.setText("translate");
+                    pun.setText("pun");
+                    equals.setText("enter");
+                case 1: //portugese 
+                    translate.setText("traduzir");
+                    pun.setText("trocadilho");
+                    equals.setText("digitar");
+                case 2: //spanish
+                    translate.setText("traducir");
+                    pun.setText("retruécano");
+                    equals.setText("ingressar");
+                case 3: //french
+                    translate.setText("traduire");
+                    pun.setText("calembour");
+                    equals.setText("équivaut à");
+                case 4: //italian
+                    translate.setText("tradurre");
+                    pun.setText("gioco di parole");
+                    equals.setText("equivale");
+                case 5: //russian
+                    translate.setText("переводить");
+                    pun.setText("каламбур");
+                    equals.setText("равно");
+                case 6:
+                    translate.setText("వేరొక భాషలో చెప్పు");
+                    pun.setText("తమాషా");
+                    equals.setText("సమానం");
+
+            }
         }
         if (event.getSource() == pun) {
             System.out.println(openParentheses.getLayoutX());
