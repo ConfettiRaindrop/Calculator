@@ -281,52 +281,11 @@ public class UserFace extends Application implements EventHandler<ActionEvent>{
 
     public void move(TranslateTransition translate){
         Random rand = new Random();
-        int randomNum = rand.nextInt((8) + 1);
 
-        if (randomNum == 1) {
-            translate.setByY(-100);
-            translate.setDuration(Duration.millis(50));
-            translate.play();
-        }
-        else if (randomNum == 2){
-            translate.setByX(-100);
-            translate.setByY(-100);
-            translate.setDuration(Duration.millis(50));
-            translate.play();
-        }
-        else if (randomNum == 3){
-            translate.setByX(-100);
-            translate.setDuration(Duration.millis(50));
-            translate.play();
-        }
-        else if (randomNum == 4){
-            translate.setByX(-100);
-            translate.setByY(100);
-            translate.setDuration(Duration.millis(50));
-            translate.play();
-        }
-        else if (randomNum == 5){
-            translate.setByY(100);
-            translate.setDuration(Duration.millis(50));
-            translate.play();
-        }
-        else if (randomNum == 6){
-            translate.setByX(100);
-            translate.setByY(100);
-            translate.setDuration(Duration.millis(50));
-            translate.play();
-        }
-        else if (randomNum == 7){
-            translate.setByX(100);
-            translate.setDuration(Duration.millis(50));
-            translate.play();
-        }
-        else if (randomNum == 8){
-            translate.setByX(100);
-            translate.setByY(-100);
-            translate.setDuration(Duration.millis(50));
-            translate.play();
-        }
+        translate.setToX(rand.nextInt((300) + 1));
+        translate.setToY(rand.nextInt((600) + 1));
+        translate.setDuration(Duration.millis(50));
+        translate.play();
     }
     
 } 
