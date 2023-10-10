@@ -12,7 +12,7 @@ import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 import java.util.Random;
-import javafx.geometry.Rectangle2D;
+import javafx.scene.shape.Rectangle;
 
 //https://fxdocs.github.io/docs/html5/#_timing
 
@@ -81,6 +81,8 @@ public class UserFace extends Application implements EventHandler<ActionEvent>{
     StackPane punPane = new StackPane();
     StackPane translatePane = new StackPane();
     StackPane textboxPane = new StackPane();
+
+    Rectangle additionRect = new Rectangle(addition.getWidth(), addition.getHeight());
 
     Label textbox = new Label();
 
@@ -184,6 +186,7 @@ public class UserFace extends Application implements EventHandler<ActionEvent>{
         grid.add(zeroPane, 1, 7);
 
         textboxPane.getChildren().add(textbox);
+        additionPane.getChildren().add(additionRect);
         additionPane.getChildren().add(addition);
 
         GridPane.setColumnSpan(textbox, 5);
