@@ -8,6 +8,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 import java.util.Random;
@@ -50,6 +51,35 @@ public class UserFace extends Application implements EventHandler<ActionEvent>{
                             zero, one, two, three, four, five, six, seven, eight, 
                             nine, sin, cos, tan, root, log, exponent, pi, e, 
                             openParentheses, closeParentheses, pun, translate};
+
+    StackPane additionPane = new StackPane();
+    StackPane subtractionPane = new StackPane();
+    StackPane multiplicationPane = new StackPane();
+    StackPane divisionPane = new StackPane();
+    StackPane equalsPane = new StackPane();
+    StackPane zeroPane = new StackPane();
+    StackPane onePane = new StackPane();
+    StackPane twoPane = new StackPane();
+    StackPane threePane = new StackPane();
+    StackPane fourPane = new StackPane();
+    StackPane fivePane = new StackPane();
+    StackPane sixPane = new StackPane();
+    StackPane sevenPane = new StackPane();
+    StackPane eightPane = new StackPane();
+    StackPane ninePane = new StackPane();
+    StackPane sinPane = new StackPane();
+    StackPane cosPane = new StackPane();
+    StackPane tanPane = new StackPane();
+    StackPane rootPane = new StackPane();
+    StackPane logPane = new StackPane();
+    StackPane exponentPane = new StackPane();
+    StackPane piPane = new StackPane();
+    StackPane ePane = new StackPane();
+    StackPane openParenthesesPane = new StackPane();
+    StackPane closeParenthesesPane = new StackPane();
+    StackPane punPane = new StackPane();
+    StackPane translatePane = new StackPane();
+    StackPane textboxPane = new StackPane();
 
     Label textbox = new Label();
 
@@ -122,35 +152,37 @@ public class UserFace extends Application implements EventHandler<ActionEvent>{
         grid.setPadding(new Insets(5));
         grid.setHgap(5);
         grid.setVgap(8);
-    
-        grid.add(textbox, 0, 0);
-        grid.add(addition, 3, 4);
-        grid.add(subtraction, 3, 5);
-        grid.add(multiplication, 3, 6);
-        grid.add(division, 3, 7);
-        grid.add(equals, 3, 8);
-        grid.add(sin, 0, 1);
-        grid.add(cos, 1, 1);
-        grid.add(tan, 2, 1);
-        grid.add(pun, 3, 1);
-        grid.add(translate, 4, 1);
-        grid.add(root, 0, 2);
-        grid.add(log, 1, 2);
-        grid.add(exponent, 2, 2);
-        grid.add(pi, 0, 3);
-        grid.add(e, 1, 3);
-        grid.add(openParentheses, 2, 3);
-        grid.add(closeParentheses, 3, 3);
-        grid.add(seven, 0, 4);
-        grid.add(eight, 1, 4);
-        grid.add(nine, 2, 4);
-        grid.add(four, 0, 5);
-        grid.add(five, 1, 5);
-        grid.add(six, 2, 5);
-        grid.add(one, 0, 6);
-        grid.add(two, 1, 6);
-        grid.add(three, 2, 6);
-        grid.add(zero, 1, 7);
+
+        grid.add(textboxPane, 0, 0);
+        grid.add(additionPane, 3, 4);
+        grid.add(subtractionPane, 3, 5);
+        grid.add(multiplicationPane, 3, 6);
+        grid.add(divisionPane, 3, 7);
+        grid.add(equalsPane, 3, 8);
+        grid.add(sinPane, 0, 1);
+        grid.add(cosPane, 1, 1);
+        grid.add(tanPane, 2, 1);
+        grid.add(punPane, 3, 1);
+        grid.add(translatePane, 4, 1);
+        grid.add(rootPane, 0, 2);
+        grid.add(logPane, 1, 2);
+        grid.add(exponentPane, 2, 2);
+        grid.add(piPane, 0, 3);
+        grid.add(ePane, 1, 3);
+        grid.add(openParenthesesPane, 2, 3);
+        grid.add(closeParenthesesPane, 3, 3);
+        grid.add(sevenPane, 0, 4);
+        grid.add(eightPane, 1, 4);
+        grid.add(ninePane, 2, 4);
+        grid.add(fourPane, 0, 5);
+        grid.add(fivePane, 1, 5);
+        grid.add(sixPane, 2, 5);
+        grid.add(onePane, 0, 6);
+        grid.add(twoPane, 1, 6);
+        grid.add(threePane, 2, 6);
+        grid.add(zeroPane, 1, 7);
+
+        textboxPane.getChildren().add(textbox);
 
         GridPane.setColumnSpan(textbox, 5);
 
