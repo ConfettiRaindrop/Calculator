@@ -9,6 +9,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.StackPane;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 import java.util.Random;
@@ -82,7 +83,7 @@ public class UserFace extends Application implements EventHandler<ActionEvent>{
     StackPane translatePane = new StackPane();
     StackPane textboxPane = new StackPane();
 
-    Rectangle additionRect = new Rectangle(addition.getWidth(), addition.getHeight());
+    Rectangle additionRect = new Rectangle(addition.getWidth() + 40, addition.getHeight() + 40);
 
     Label textbox = new Label();
 
@@ -151,6 +152,8 @@ public class UserFace extends Application implements EventHandler<ActionEvent>{
         pun.setOnAction(this);
         translate.setOnAction(this);
 
+        additionRect.setFill(Color.BLUEVIOLET);
+
         GridPane grid = new GridPane();
         grid.setPadding(new Insets(5));
         grid.setHgap(5);
@@ -198,6 +201,9 @@ public class UserFace extends Application implements EventHandler<ActionEvent>{
 
         TranslateTransition translate_addition = new TranslateTransition();  
         translate_addition.setNode(addition);  
+        TranslateTransition translate_additionRect = new TranslateTransition();  
+        translate_additionRect.setNode(additionRect); 
+
         TranslateTransition translate_subtraction = new TranslateTransition();  
         translate_subtraction.setNode(subtraction);
         TranslateTransition translate_multiplication = new TranslateTransition();  
@@ -248,81 +254,81 @@ public class UserFace extends Application implements EventHandler<ActionEvent>{
         translate_closeParentheses.setNode(closeParentheses);
 
 
-        addition.setOnMouseEntered(event -> {
-            move(translate_addition, addition);
+        additionRect.setOnMouseEntered(event -> {
+            move(translate_addition, translate_additionRect, addition, additionRect);
             });
-        subtraction.setOnMouseEntered(event -> {
-            move(translate_subtraction, subtraction);
-            });
-        multiplication.setOnMouseEntered(event -> {
-            move(translate_multiplication, multiplication);
-            });
-        division.setOnMouseEntered(event -> {
-            move(translate_division, division);
-            }); 
-        one.setOnMouseEntered(event -> {
-            move(translate_one, one);
-            }); 
-        two.setOnMouseEntered(event -> {
-            move(translate_two, two);
-            }); 
-        three.setOnMouseEntered(event -> {
-            move(translate_three, three);
-            }); 
-        four.setOnMouseEntered(event -> {
-            move(translate_four, four);
-            }); 
-        five.setOnMouseEntered(event -> {
-            move(translate_five, five);
-            }); 
-        six.setOnMouseEntered(event -> {
-            move(translate_six, six);
-            }); 
-        seven.setOnMouseEntered(event -> {
-            move(translate_seven, seven);
-            }); 
-        eight.setOnMouseEntered(event -> {
-            move(translate_eight, eight);
-            }); 
-        nine.setOnMouseEntered(event -> {
-            move(translate_nine, nine);
-            }); 
-        zero.setOnMouseEntered(event -> {
-            move(translate_zero, zero);
-            }); 
-        equals.setOnMouseEntered(event -> {
-            move(translate_equals, equals);
-            }); 
-        sin.setOnMouseEntered(event -> {
-            move(translate_sin, sin);
-            }); 
-        cos.setOnMouseEntered(event -> {
-            move(translate_cos, cos);
-            }); 
-        tan.setOnMouseEntered(event -> {
-            move(translate_tan, tan);
-            }); 
-        e.setOnMouseEntered(event -> {
-            move(translate_e, e);
-            }); 
-        exponent.setOnMouseEntered(event -> {
-            move(translate_exponent, exponent);
-            }); 
-        pi.setOnMouseEntered(event -> {
-            move(translate_pi, pi);
-            }); 
-        log.setOnMouseEntered(event -> {
-            move(translate_log, log);
-            }); 
-        root.setOnMouseEntered(event -> {
-            move(translate_root, root);
-            });
-        openParentheses.setOnMouseEntered(event -> {
-            move(translate_openParentheses, openParentheses);
-            });
-        closeParentheses.setOnMouseEntered(event -> {
-            move(translate_closeParentheses, closeParentheses);
-            });
+        //subtraction.setOnMouseEntered(event -> {
+        //    move(translate_subtraction, subtraction, additionRect);
+        //    });
+        //multiplication.setOnMouseEntered(event -> {
+        //    move(translate_multiplication, multiplication, additionRect);
+        //    });
+        //division.setOnMouseEntered(event -> {
+        //    move(translate_division, division, additionRect);
+        //    }); 
+        //one.setOnMouseEntered(event -> {
+        //    move(translate_one, one);
+        //    }); 
+        //two.setOnMouseEntered(event -> {
+        //    move(translate_two, two);
+        //    }); 
+        //three.setOnMouseEntered(event -> {
+        //    move(translate_three, three);
+        //    }); 
+        //four.setOnMouseEntered(event -> {
+        //    move(translate_four, four);
+        //    }); 
+        //five.setOnMouseEntered(event -> {
+        //    move(translate_five, five);
+        //    }); 
+        //six.setOnMouseEntered(event -> {
+        //    move(translate_six, six);
+        //    }); 
+        //seven.setOnMouseEntered(event -> {
+        //    move(translate_seven, seven);
+        //    }); 
+        //eight.setOnMouseEntered(event -> {
+        //    move(translate_eight, eight);
+        //    }); 
+        //nine.setOnMouseEntered(event -> {
+        //    move(translate_nine, nine);
+        //    }); 
+        //zero.setOnMouseEntered(event -> {
+        //    move(translate_zero, zero);
+        //    }); 
+        //equals.setOnMouseEntered(event -> {
+        //    move(translate_equals, equals);
+        //    }); 
+        //sin.setOnMouseEntered(event -> {
+        //    move(translate_sin, sin);
+        //    }); 
+        //cos.setOnMouseEntered(event -> {
+        //    move(translate_cos, cos);
+        //    }); 
+        //tan.setOnMouseEntered(event -> {
+        //    move(translate_tan, tan);
+        //    }); 
+        //e.setOnMouseEntered(event -> {
+        //    move(translate_e, e);
+        //    }); 
+        //exponent.setOnMouseEntered(event -> {
+        //    move(translate_exponent, exponent);
+        //    }); 
+        //pi.setOnMouseEntered(event -> {
+        //    move(translate_pi, pi);
+        //    }); 
+        //log.setOnMouseEntered(event -> {
+        //    move(translate_log, log);
+        //    }); 
+        //root.setOnMouseEntered(event -> {
+        //    move(translate_root, root);
+        //    });
+        //openParentheses.setOnMouseEntered(event -> {
+        //    move(translate_openParentheses, openParentheses);
+        //    });
+        //closeParentheses.setOnMouseEntered(event -> {
+        //    move(translate_closeParentheses, closeParentheses);
+        //    });
     }
 
     @Override
@@ -390,13 +396,20 @@ public class UserFace extends Application implements EventHandler<ActionEvent>{
         }
     }
 
-    public void move(TranslateTransition translate, Button btn){
+    public void move(TranslateTransition translate_bt, TranslateTransition translate_rect, Button bt, Rectangle rect){
         Random rand = new Random();
+        int x = rand.nextInt((120) + 1);
+        int y = rand.nextInt((390) + 1);
 
-        translate.setToX(rand.nextInt((120) + 1));
-        translate.setToY(rand.nextInt((390) + 1));
-        translate.setDuration(Duration.millis(50));
-        translate.play();
+        translate_bt.setToX(x);
+        translate_bt.setToY(y);
+        translate_rect.setToX(x);
+        translate_rect.setToY(y);
+        
+        translate_bt.setDuration(Duration.millis(50));
+        translate_rect.setDuration(Duration.millis(50));
+        translate_bt.play();
+        translate_rect.play();
         for (Button other_butt : allButtons) {
 
             }
