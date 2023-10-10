@@ -12,6 +12,7 @@ import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 import java.util.Random;
+import javafx.geometry.Rectangle2D;
 
 //https://fxdocs.github.io/docs/html5/#_timing
 
