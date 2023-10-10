@@ -297,36 +297,43 @@ public class UserFace extends Application implements EventHandler<ActionEvent>{
             System.out.println(input);
         } else if (event.getSource() == translate) {
             Random rand = new Random();
-            int lang = rand.nextInt(6);
+            int lang = rand.nextInt(7) + 1;
             switch (lang) {
-                case 0: //english
+                case 1: //english
                     translate.setText("translate");
                     pun.setText("pun");
                     equals.setText("enter");
-                case 1: //portugese 
+                    break;
+                case 2: //portugese 
                     translate.setText("traduzir");
                     pun.setText("trocadilho");
                     equals.setText("digitar");
-                case 2: //spanish
+                    break;
+                case 3: //spanish
                     translate.setText("traducir");
                     pun.setText("retruécano");
                     equals.setText("ingressar");
-                case 3: //french
+                    break;
+                case 4: //french
                     translate.setText("traduire");
                     pun.setText("calembour");
                     equals.setText("équivaut à");
-                case 4: //italian
+                    break;
+                case 5: //italian
                     translate.setText("tradurre");
                     pun.setText("gioco di parole");
                     equals.setText("equivale");
-                case 5: //russian
+                    break;
+                case 6: //russian
                     translate.setText("переводить");
                     pun.setText("каламбур");
                     equals.setText("равно");
-                case 6:
+                    break;
+                case 7:
                     translate.setText("వేరొక భాషలో చెప్పు");
                     pun.setText("తమాషా");
                     equals.setText("సమానం");
+                    break;
 
             }
         }
@@ -353,12 +360,10 @@ public class UserFace extends Application implements EventHandler<ActionEvent>{
         translate.setToY(rand.nextInt((390) + 1));
         translate.setDuration(Duration.millis(50));
         translate.play();
-        for (Button: allButtons) {
-            while (btn.intersects(null)) {
+        for (Button other_butt : allButtons) {
 
             }
         }
-    }
 
     public void checkCollision(){
 
