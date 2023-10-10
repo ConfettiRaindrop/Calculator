@@ -353,8 +353,11 @@ public class UserFace extends Application implements EventHandler<ActionEvent>{
         translate.setToY(rand.nextInt((390) + 1));
         translate.setDuration(Duration.millis(50));
         translate.play();
-        for (allButtons: buttons)
-        while btn.intersects(null)
+        for (Button: allButtons) {
+            while (btn.intersects(null)) {
+
+            }
+        }
     }
 
     public void checkCollision(){
