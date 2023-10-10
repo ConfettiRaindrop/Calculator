@@ -183,6 +183,7 @@ public class UserFace extends Application implements EventHandler<ActionEvent>{
         grid.add(zeroPane, 1, 7);
 
         textboxPane.getChildren().add(textbox);
+        additionPane.getChildren().add(addition);
 
         GridPane.setColumnSpan(textbox, 5);
 
