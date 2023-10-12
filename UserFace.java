@@ -121,7 +121,7 @@ public class UserFace extends Application implements EventHandler<ActionEvent>{
 
 
     String input = "";
-    Translator theRealMath = new Translator();
+    //Translator theRealMath = new Translator();
 
     public static void main(String[] args) {
         launch(args);
@@ -217,6 +217,7 @@ public class UserFace extends Application implements EventHandler<ActionEvent>{
 
         GridPane grid = new GridPane();
         grid.setPadding(new Insets(5));
+        grid.setStyle(STYLESHEET_CASPIAN);
         //grid.setHgap(5);
         grid.setVgap(8);
 
@@ -573,7 +574,7 @@ public class UserFace extends Application implements EventHandler<ActionEvent>{
             System.out.println(scene.getY() + "| y");
         }
         if (event.getSource() == equals) {
-            theRealMath.getInput(input);
+            //theRealMath.getInput(input);
         }
     }
 
