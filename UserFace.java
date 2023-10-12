@@ -518,7 +518,9 @@ public class UserFace extends Application implements EventHandler<ActionEvent>{
         translate_bt.play();
         translate_rect.play();
         for (Button other_butt : allButtons) {
-
+                while (rect.intersects(rect.getBoundsInLocal())){
+                    
+                }
             }
         }
 
