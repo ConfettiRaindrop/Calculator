@@ -83,6 +83,8 @@ public class UserFace extends Application implements EventHandler<ActionEvent>{
     StackPane translatePane = new StackPane();
     StackPane textboxPane = new StackPane();
 
+    Label textbox = new Label();
+
     Rectangle additionRect = new Rectangle(addition.getWidth() + 40, addition.getHeight() + 40);
     Rectangle subtractionRect = new Rectangle(subtraction.getWidth() + 40, subtraction.getHeight() + 40);
     Rectangle multiplicationRect = new Rectangle(multiplication.getWidth() + 40, multiplication.getHeight() + 40);
@@ -110,11 +112,11 @@ public class UserFace extends Application implements EventHandler<ActionEvent>{
     Rectangle closeParenthesesRect = new Rectangle(closeParentheses.getWidth() + 40, closeParentheses.getHeight() + 40);
     Rectangle punRect = new Rectangle(pun.getWidth() + 40, pun.getHeight() + 40);
     Rectangle translateRect = new Rectangle(translate.getWidth() + 40, translate.getHeight() + 40);
-    Rectangle textboxRect = new Rectangle(addition.getWidth() + 40, addition.getHeight() + 40);
+    Rectangle textboxRect = new Rectangle(textbox.getWidth() + 40, textbox.getHeight() + 40);
 
-    Label textbox = new Label();
 
     String input = "";
+    Translator theRealMath = new Translator();
 
     public static void main(String[] args) {
         launch(args);
@@ -210,7 +212,7 @@ public class UserFace extends Application implements EventHandler<ActionEvent>{
 
         GridPane grid = new GridPane();
         grid.setPadding(new Insets(5));
-        grid.setHgap(5);
+        //grid.setHgap(5);
         grid.setVgap(8);
 
         grid.add(textboxPane, 0, 0);
@@ -301,7 +303,7 @@ public class UserFace extends Application implements EventHandler<ActionEvent>{
 
         GridPane.setColumnSpan(textboxPane, 5);
 
-        scene = new Scene(grid, 300, 600);
+        scene = new Scene(grid, 300, 600, Color.BLACK);
         primaryStage.setScene(scene);
         primaryStage.setResizable(false);
         primaryStage.show();
@@ -494,12 +496,8 @@ public class UserFace extends Application implements EventHandler<ActionEvent>{
             System.out.println(scene.getX() + "| x");
             System.out.println(scene.getY() + "| y");
         }
-        if (event.getSource() == translate) {
-            System.out.println(openParentheses.getLayoutX());
-            System.out.println(scene.getHeight() + "| height");
-            System.out.println(scene.getWidth() + "| width");
-            System.out.println(scene.getX() + "| x");
-            System.out.println(scene.getY() + "| y");
+        if (event.getSource() == equals) {
+            //send input to theRealMath
         }
     }
 
