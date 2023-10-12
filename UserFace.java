@@ -114,6 +114,11 @@ public class UserFace extends Application implements EventHandler<ActionEvent>{
     Rectangle translateRect = new Rectangle(translate.getWidth() + 40, translate.getHeight() + 40);
     Rectangle textboxRect = new Rectangle(textbox.getWidth() + 40, textbox.getHeight() + 40);
 
+    Rectangle[] allRectangles = {additionRect, subtractionRect, multiplicationRect, divisionRect, equalsRect, 
+                                zeroRect, oneRect, twoRect, threeRect, fourRect, fiveRect, sixRect, sevenRect, 
+                                eightRect, nineRect, sinRect, cosRect, tanRect, rootRect, logRect, exponentRect,
+                                piRect, eRect, openParenthesesRect, closeParenthesesRect, punRect, translateRect, textboxRect};
+
 
     String input = "";
     Translator theRealMath = new Translator();
@@ -497,7 +502,7 @@ public class UserFace extends Application implements EventHandler<ActionEvent>{
             System.out.println(scene.getY() + "| y");
         }
         if (event.getSource() == equals) {
-            //send input to theRealMath
+            theRealMath.getInput(input);
         }
     }
 

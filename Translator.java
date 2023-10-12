@@ -44,7 +44,7 @@ public class Translator {
       
       }
     }
-    public static String getInput(String u_input){
+    public String getInput(String u_input){
       return u_input; 
     }
   
