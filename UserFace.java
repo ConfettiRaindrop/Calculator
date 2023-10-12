@@ -592,12 +592,7 @@ public class UserFace extends Application implements EventHandler<ActionEvent>{
         translate_rect.setDuration(Duration.millis(50));
         translate_bt.play();
         translate_rect.play();
-        for (Button other_butt : allButtons) {
-                while (rect.intersects(rect.getBoundsInLocal())){
-                    
-                }
-            }
-        }
+    }
 
     public void checkCollision(){
 
