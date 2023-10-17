@@ -21,9 +21,15 @@ public class Translator {
           if (Character.isDigit(n)){
               int n_converted = n; 
               nums.add(n_converted); 
+          }else if (Character.isWhitespace(n)){
+            continue; 
           }else if(String.valueOf(n).matches("[^a-zA-Z0-9]")){
             // The parameters im passing into the matches method below is from chatGPT
             if (String.valueOf(n).matches(".*\\(")) {
+              //loop through till you find the end parenthesis and pass in the seperated 
+              for (int j = i; j < equation.length; j++){
+                if (Cha)
+              }
               recurSolve(); 
           } else {
               // Code to handle the absence of an open parenthesis '('
