@@ -1,11 +1,12 @@
 import java.util.ArrayList;  
 public class Translator {
     public static String u_input;
+    public static String h_u_input;
 
     Translator(){
       //place holder u_input so i test out my functions
         u_input = "3+8*2";
-        h_u_input = "9+ (3*(6+10 + (9*0)))"; 
+        h_u_input = "9 + ( 3 * ( 6 + 10 + ( 9 * 0 ) ) )"; //how should i make 10 count as one num and not as 1 and 0?
         System.out.println("Hello world"); 
         //CalculatorFunctions calc = new CalculatorFunctions(); 
         //String u_input = getUserInput(); 
@@ -39,7 +40,7 @@ public class Translator {
                 }
               }
             }
-            
+
             operators.add(n);
           }else{
             //not a charecter 
@@ -48,15 +49,31 @@ public class Translator {
       }
     }
     public static int recurSolve(char [] equation, int i, int j){
+      ArrayList<Integer> rNums = new ArrayList<>();
+      ArrayList<Character> rOperators = new ArrayList<>();
       //to handle parenthesis within parenthesis within parenthesis 
-      if (u_input.length() == 1){
-        //base case - 1 digit left 
-        return 1; 
-      }else if (Character.isDigit((u_input.substring(0,1)).charAt(0))){
-        return 1; 
+      if (equation.length == 1){
+        //ultRizz reached 
+        return equation[0]; 
+
+      }else{
+        char s = equation[0];
+        if (Character.isDigit(s)){
+          String tempNumString = ""; 
+          rNums.add(Character.getNumericValue(s));
+
+        }else if (Character.isWhitespace(s)){
+          // continue; (in loop)
+        }else if (String.valueOf(s).matches("[^a-zA-Z0-9]")){
+          rOperators.add(s);
+        }else{
+          //weird characters 
+        }
       }
       return 0; 
     }
+
+
     public String getInput(String u_input){
       return u_input; 
     }
