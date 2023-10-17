@@ -21,20 +21,25 @@ public class Translator {
           if (Character.isDigit(n)){
               int n_converted = n; 
               nums.add(n_converted); 
+
           }else if (Character.isWhitespace(n)){
             continue; 
+
           }else if(String.valueOf(n).matches("[^a-zA-Z0-9]")){
-            // The parameters im passing into the matches method below is from chatGPT
-            if (String.valueOf(n).matches(".*\\(")) {
-              //loop through till you find the end parenthesis and pass in the seperated 
+            // The parameters im passing into the matches method above is from stack overflow:  https://stackoverflow.com/questions/1721602/regex-for-matching-a-z-a-z-0-9-and 
+            if (n == '(') {
+              //loop through till you find the end parenthesis and pass in the seperated eq.
               for (int j = i; j < equation.length; j++){
-                if (Cha)
+                n = equation[j]; 
+                if (n == ')'){
+                  int ultRizz = Translator.recurSolve(equation,i,j);
+                  nums.add(ultRizz);
+                  i = j; 
+                  break;  
+                }
               }
-              recurSolve(); 
-          } else {
-              // Code to handle the absence of an open parenthesis '('
-          }
-          
+            }
+            
             operators.add(n);
           }else{
             //not a charecter 
@@ -42,13 +47,15 @@ public class Translator {
           
       }
     }
-    public static int recurSolve(String u){
+    public static int recurSolve(char [] equation, int i, int j){
       //to handle parenthesis within parenthesis within parenthesis 
       if (u_input.length() == 1){
         //base case - 1 digit left 
+        return 1; 
       }else if (Character.isDigit((u_input.substring(0,1)).charAt(0))){
-      
+        return 1; 
       }
+      return 0; 
     }
     public String getInput(String u_input){
       return u_input; 
