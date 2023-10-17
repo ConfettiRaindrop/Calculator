@@ -220,6 +220,7 @@ public class UserFace extends Application implements EventHandler<ActionEvent>{
         grid.setStyle(STYLESHEET_CASPIAN);
         //grid.setHgap(5);
         grid.setVgap(8);
+        grid.setGridLinesVisible(true);
 
         grid.add(textboxPane, 0, 0);
         grid.add(additionPane, 3, 4);
@@ -307,13 +308,13 @@ public class UserFace extends Application implements EventHandler<ActionEvent>{
         textboxPane.getChildren().add(textboxRect);
         textboxPane.getChildren().add(textbox);
 
-        GridPane.setColumnSpan(textboxPane, 5);
-        
+        GridPane.setColumnSpan(textboxPane, 5);   
 
         scene = new Scene(grid, 300, 600, Color.BLACK);
         primaryStage.setScene(scene);
         primaryStage.setResizable(false);
         primaryStage.show();
+
 
         TranslateTransition translate_addition = new TranslateTransition();  
         translate_addition.setNode(addition);  
@@ -438,82 +439,82 @@ public class UserFace extends Application implements EventHandler<ActionEvent>{
         TranslateTransition translate_closeParentheses = new TranslateTransition();
         translate_closeParentheses.setNode(closeParentheses);
         TranslateTransition translate_closeParenthesesRect = new TranslateTransition();  
-        translate_closeParenthesesRect.setNode(closeParentheses); 
+        translate_closeParenthesesRect.setNode(closeParenthesesRect); 
 
 
         additionRect.setOnMouseEntered(event -> {
             move(translate_addition, translate_additionRect, addition, additionRect);
             });
-        subtraction.setOnMouseEntered(event -> {
-            move(translate_subtraction, translate_subtractionRect, subtraction, additionRect);
+        subtractionRect.setOnMouseEntered(event -> {
+            move(translate_subtraction, translate_subtractionRect, subtraction, subtractionRect);
             });
-        multiplication.setOnMouseEntered(event -> {
-            move(translate_multiplication, translate_multiplicationRect, multiplication, additionRect);
+        multiplicationRect.setOnMouseEntered(event -> {
+            move(translate_multiplication, translate_multiplicationRect, multiplication, multiplicationRect);
             });
-        division.setOnMouseEntered(event -> {
-            move(translate_division, translate_divisionRect, division, additionRect);
+        divisionRect.setOnMouseEntered(event -> {
+            move(translate_division, translate_divisionRect, division, divisionRect);
             }); 
-        one.setOnMouseEntered(event -> {
-            move(translate_one, translate_one, one, oneRect);
+        oneRect.setOnMouseEntered(event -> {
+            move(translate_one, translate_oneRect, one, oneRect);
             }); 
-        two.setOnMouseEntered(event -> {
-            move(translate_two, translate_two, two, twoRect);
+        twoRect.setOnMouseEntered(event -> {
+            move(translate_two, translate_twoRect, two, twoRect);
             }); 
-        three.setOnMouseEntered(event -> {
+        threeRect.setOnMouseEntered(event -> {
             move(translate_three, translate_threeRect, three, threeRect);
             }); 
-        four.setOnMouseEntered(event -> {
+        fourRect.setOnMouseEntered(event -> {
             move(translate_four, translate_fourRect, four, fourRect);
             }); 
-        five.setOnMouseEntered(event -> {
+        fiveRect.setOnMouseEntered(event -> {
             move(translate_five, translate_fiveRect, five, fiveRect);
             }); 
-        six.setOnMouseEntered(event -> {
+        sixRect.setOnMouseEntered(event -> {
             move(translate_six, translate_sixRect, six, sixRect);
             }); 
-        seven.setOnMouseEntered(event -> {
+        sevenRect.setOnMouseEntered(event -> {
             move(translate_seven,  translate_sevenRect, seven, sevenRect);
             }); 
-        eight.setOnMouseEntered(event -> {
+        eightRect.setOnMouseEntered(event -> {
             move(translate_eight, translate_eightRect, eight, eightRect);
             }); 
-        nine.setOnMouseEntered(event -> {
+        nineRect.setOnMouseEntered(event -> {
             move(translate_nine, translate_nineRect, nine, nineRect);
             }); 
-        zero.setOnMouseEntered(event -> {
+        zeroRect.setOnMouseEntered(event -> {
             move(translate_zero, translate_zeroRect, zero, zeroRect);
             }); 
-        equals.setOnMouseEntered(event -> {
+        equalsRect.setOnMouseEntered(event -> {
             move(translate_equals, translate_equalsRect, equals, equalsRect);
             }); 
-        sin.setOnMouseEntered(event -> {
+        sinRect.setOnMouseEntered(event -> {
             move(translate_sin, translate_sinRect, sin, sinRect);
             }); 
-        cos.setOnMouseEntered(event -> {
+        cosRect.setOnMouseEntered(event -> {
             move(translate_cos, translate_cosRect, cos, cosRect);
             }); 
-        tan.setOnMouseEntered(event -> {
+        tanRect.setOnMouseEntered(event -> {
             move(translate_tan, translate_tanRect, tan, tanRect);
             }); 
-        e.setOnMouseEntered(event -> {
+        eRect.setOnMouseEntered(event -> {
             move(translate_e, translate_eRect, e, eRect);
             }); 
-        exponent.setOnMouseEntered(event -> {
+        exponentRect.setOnMouseEntered(event -> {
             move(translate_exponent, translate_exponentRect, exponent, exponentRect);
             }); 
-        pi.setOnMouseEntered(event -> {
+        piRect.setOnMouseEntered(event -> {
             move(translate_pi, translate_piRect, pi, piRect);
             }); 
-        log.setOnMouseEntered(event -> {
+        logRect.setOnMouseEntered(event -> {
             move(translate_log, translate_logRect, log, logRect);
             }); 
-        root.setOnMouseEntered(event -> {
+        rootRect.setOnMouseEntered(event -> {
             move(translate_root, translate_rootRect, root, rootRect);
             });
-        openParentheses.setOnMouseEntered(event -> {
+        openParenthesesRect.setOnMouseEntered(event -> {
             move(translate_openParentheses, translate_openParenthesesRect, openParentheses, openParenthesesRect);
             });
-        closeParentheses.setOnMouseEntered(event -> {
+        closeParenthesesRect.setOnMouseEntered(event -> {
             move(translate_closeParentheses, translate_closeParenthesesRect, closeParentheses, closeParenthesesRect);
             });
     }
@@ -593,10 +594,35 @@ public class UserFace extends Application implements EventHandler<ActionEvent>{
         translate_rect.setDuration(Duration.millis(50));
         translate_bt.play();
         translate_rect.play();
+
+        checkCollision(translate_bt, translate_rect, bt, rect);
+
     }
 
-    public void checkCollision(){
+    public void checkCollision(TranslateTransition translate_bt, TranslateTransition translate_rect, Button bt, Rectangle rect){
+        Random rand = new Random();
+        int i = 0;
+        for (Rectangle r: allRectangles) {
+            if (intersection(r, rect)){
+                System.out.println(r.getX() + " " + rect.getX());
+            }
+        }
+    }
 
+    public static boolean intersection(Rectangle r1, Rectangle r2) {
+        double xmin = Math.max(r1.getX(), r2.getX());    //find the maximum minimum x co-ordinate value between rectangle 1 and 2 entered
+        double xmax1 = r1.getX() + r1.getWidth();    //finds max co-ordinate for rectangle 1
+        double xmax2 = r2.getX() + r2.getWidth();    //finds max co-ordinate for rectangle 2
+        double xmax = Math.min(xmax1, xmax2);  //out of both max rect 1 and 2, take minimum as this is where would intersect
+        if (xmax >= xmin) { //if true then its in the same x co-ordinates
+            double ymin = Math.max(r1.getY(), r2.getY());    //do same for y co-ordinate
+            double ymax1 = r1.getY() + r1.getHeight();
+            double ymax2 = r2.getY() + r2.getHeight();
+            double ymax = Math.min(ymax1, ymax2);
+            if ( ymax >= ymax2 )    //if in-between this, then two rectangles intersects
+                return true;    
+        }
+        return false;   //else doesn't intersect
     }
     
 } 
