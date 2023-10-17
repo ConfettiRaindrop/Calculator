@@ -14,6 +14,7 @@ import javafx.stage.Stage;
 import javafx.util.Duration;
 import java.util.Random;
 import javafx.scene.shape.Rectangle;
+import javafx.scene.shape.Shape;
 
 //https://fxdocs.github.io/docs/html5/#_timing
 
@@ -603,26 +604,12 @@ public class UserFace extends Application implements EventHandler<ActionEvent>{
         Random rand = new Random();
         int i = 0;
         for (Rectangle r: allRectangles) {
-            if (intersection(r, rect)){
+            boolean collisionDetected = false;
+            Shape intersect = Shape.intersect(r, rect);
+            if (intersect.getBoundsInParent().getWidth() != -1 && r != rect) {
+                collisionDetected = true;
                 System.out.println(r.getX() + " " + rect.getX());
-            }
         }
     }
 
-    public static boolean intersection(Rectangle r1, Rectangle r2) {
-        double xmin = Math.max(r1.getX(), r2.getX());    //find the maximum minimum x co-ordinate value between rectangle 1 and 2 entered
-        double xmax1 = r1.getX() + r1.getWidth();    //finds max co-ordinate for rectangle 1
-        double xmax2 = r2.getX() + r2.getWidth();    //finds max co-ordinate for rectangle 2
-        double xmax = Math.min(xmax1, xmax2);  //out of both max rect 1 and 2, take minimum as this is where would intersect
-        if (xmax >= xmin) { //if true then its in the same x co-ordinates
-            double ymin = Math.max(r1.getY(), r2.getY());    //do same for y co-ordinate
-            double ymax1 = r1.getY() + r1.getHeight();
-            double ymax2 = r2.getY() + r2.getHeight();
-            double ymax = Math.min(ymax1, ymax2);
-            if ( ymax >= ymax2 )    //if in-between this, then two rectangles intersects
-                return true;    
-        }
-        return false;   //else doesn't intersect
-    }
-    
-} 
+    }}
