@@ -85,7 +85,7 @@ public class UserFace extends Application implements EventHandler<ActionEvent>{
     Rectangle closeParenthesesRect = new Rectangle(closeParentheses.getWidth() + 40, closeParentheses.getHeight() + 40);
     Rectangle punRect = new Rectangle(pun.getWidth() + 40, pun.getHeight() + 40);
     Rectangle translateRect = new Rectangle(translate.getWidth() + 40, translate.getHeight() + 40);
-    Rectangle textboxRect = new Rectangle(textbox.getWidth() + 40, textbox.getHeight() + 40);
+    Rectangle textboxRect = new Rectangle(textbox.getWidth() + 400, textbox.getHeight() + 40);
 
     Rectangle[] allRectangles = {additionRect, subtractionRect, multiplicationRect, divisionRect, equalsRect, 
                                 zeroRect, oneRect, twoRect, threeRect, fourRect, fiveRect, sixRect, sevenRect, 
@@ -361,19 +361,19 @@ public class UserFace extends Application implements EventHandler<ActionEvent>{
         AnchorPane.setTopAnchor(division, 10.0d);
         AnchorPane.setLeftAnchor(division, 170.0d);
         anchor.getChildren().add(zero);
-        AnchorPane.setTopAnchor(zero, 60.0d);
-        AnchorPane.setLeftAnchor(zero, 10.0d);
+        AnchorPane.setTopAnchor(zero, 10.0d);
+        AnchorPane.setLeftAnchor(zero, 60.0d);
         anchor.getChildren().add(one);
         AnchorPane.setTopAnchor(one, 10.0d);
-        AnchorPane.setLeftAnchor(one, 10.0d);
+        AnchorPane.setLeftAnchor(one, 220.0d);
         anchor.getChildren().add(two);
-        AnchorPane.setTopAnchor(two, 60.0d);
+        AnchorPane.setTopAnchor(two, 120.0d);
         AnchorPane.setLeftAnchor(two, 10.0d);
         anchor.getChildren().add(three);
-        AnchorPane.setTopAnchor(three, 10.0d);
+        AnchorPane.setTopAnchor(three, 180.0d);
         AnchorPane.setLeftAnchor(three, 10.0d);
         anchor.getChildren().add(four);
-        AnchorPane.setTopAnchor(four, 60.0d);
+        AnchorPane.setTopAnchor(four, 240.0d);
         AnchorPane.setLeftAnchor(four, 10.0d);
         anchor.getChildren().add(five);
         AnchorPane.setTopAnchor(five, 300.0d);
@@ -385,8 +385,8 @@ public class UserFace extends Application implements EventHandler<ActionEvent>{
         AnchorPane.setTopAnchor(seven, 420.0d);
         AnchorPane.setLeftAnchor(seven, 10.0d);
         anchor.getChildren().add(eight);
-        AnchorPane.setLeftAnchor(eight, 480.0d);
         AnchorPane.setTopAnchor(eight, 10.0d);
+        AnchorPane.setLeftAnchor(eight, 480.0d);
         anchor.getChildren().add(nine);
         AnchorPane.setTopAnchor(nine, 530.0d);
         AnchorPane.setLeftAnchor(nine, 10.0d);
@@ -657,36 +657,43 @@ public class UserFace extends Application implements EventHandler<ActionEvent>{
                     translate.setText("translate");
                     pun.setText("pun");
                     equals.setText("enter");
+                    translateRect.setWidth(translate.getWidth() + 40);
                     break;
                 case 2: //portugese 
                     translate.setText("traduzir");
                     pun.setText("trocadilho");
                     equals.setText("digitar");
+                    translateRect.setWidth(translate.getWidth() + 40);
                     break;
                 case 3: //spanish
                     translate.setText("traducir");
                     pun.setText("retruécano");
                     equals.setText("ingressar");
+                    translateRect.setWidth(translate.getWidth() + 40);
                     break;
                 case 4: //french
                     translate.setText("traduire");
                     pun.setText("calembour");
                     equals.setText("équivaut à");
+                    translateRect.setWidth(translate.getWidth() + 40);
                     break;
                 case 5: //italian
                     translate.setText("tradurre");
                     pun.setText("gioco di parole");
                     equals.setText("equivale");
+                    translateRect.setWidth(translate.getWidth() + 40);
                     break;
                 case 6: //russian
                     translate.setText("переводить");
                     pun.setText("каламбур");
                     equals.setText("равно");
+                    translateRect.setWidth(translate.getWidth() + 40);
                     break;
                 case 7:
                     translate.setText("వేరొక భాషలో చెప్పు");
                     pun.setText("తమాషా");
                     equals.setText("సమానం");
+                    translateRect.setWidth(translate.getWidth() + 40);
                     break;
 
             }
