@@ -372,11 +372,14 @@ public class UserFace extends Application implements EventHandler<ActionEvent>{
 
         GridPane.setColumnSpan(textboxPane, 5);   
 
+        equals.prefHeight(60);
+        equals.prefWidth(60);
+
         anchor.getChildren().add(equals);
         AnchorPane.setBottomAnchor(equals, 10.0d);
         AnchorPane.setRightAnchor(equals, 10.0d);
         anchor.getChildren().add(addition);
-        AnchorPane.setBottomAnchor(addition, 15.0d);
+        AnchorPane.setBottomAnchor(addition, 60.0d);
         AnchorPane.setRightAnchor(addition, 10.0d);
 
         //scene = new Scene(grid, 300, 600, Color.BLACK);
