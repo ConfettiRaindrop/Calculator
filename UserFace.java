@@ -756,8 +756,8 @@ public class UserFace extends Application implements EventHandler<ActionEvent>{
 
     public void move(TranslateTransition translate_bt, TranslateTransition translate_rect, Button bt, Rectangle rect){
         Random rand = new Random();
-        int x = rand.nextInt((10) + 1);
-        int y = rand.nextInt((10) + 1);
+        int x = rand.nextInt((120) + 1);
+        int y = rand.nextInt((500) + 1);
 
         translate_bt.setToX(x);
         translate_bt.setToY(y);
