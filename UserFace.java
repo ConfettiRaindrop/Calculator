@@ -375,18 +375,19 @@ public class UserFace extends Application implements EventHandler<ActionEvent>{
         equals.prefHeight(60);
         equals.prefWidth(60);
 
-        anchor.getChildren().add(equals);
-        AnchorPane.setBottomAnchor(equals, 10.0d);
-        AnchorPane.setRightAnchor(equals, 10.0d);
-        anchor.getChildren().add(addition);
-        AnchorPane.setBottomAnchor(addition, 60.0d);
-        AnchorPane.setRightAnchor(addition, 10.0d);
         anchor.getChildren().add(equalsRect);
         AnchorPane.setBottomAnchor(equalsRect, 10.0d);
         AnchorPane.setRightAnchor(equalsRect, 10.0d);
         anchor.getChildren().add(additionRect);
         AnchorPane.setBottomAnchor(additionRect, 60.0d);
         AnchorPane.setRightAnchor(additionRect, 10.0d);
+        anchor.getChildren().add(equals);
+        AnchorPane.setBottomAnchor(equals, 10.0d);
+        AnchorPane.setRightAnchor(equals, 10.0d);
+        anchor.getChildren().add(addition);
+        AnchorPane.setBottomAnchor(addition, 60.0d);
+        AnchorPane.setRightAnchor(addition, 10.0d);
+        
 
         //scene = new Scene(grid, 300, 600, Color.BLACK);
         anchor.setPrefSize(300, 600);
