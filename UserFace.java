@@ -741,23 +741,14 @@ public class UserFace extends Application implements EventHandler<ActionEvent>{
     public void checkCollision(TranslateTransition translate_bt, TranslateTransition translate_rect, Button bt, Rectangle rect){
         Random rand = new Random();
         int i = 0;
+        boolean collisionDetected = false;
         for (Rectangle r: allRectangles) {
-            boolean collisionDetected = false;
-            Shape intersect = Shape.intersect(r, rect);
-            if (intersect.getBoundsInParent().getWidth() != -1 && r != rect) {
-                int x = rand.nextInt((120) + 1);
-                int y = rand.nextInt((500) + 1);
-
-                translate_bt.setToX(x);
-                translate_bt.setToY(y);
-                translate_rect.setToX(x);
-                translate_rect.setToY(y);
-                
-                translate_bt.setDuration(Duration.millis(50));
-                translate_rect.setDuration(Duration.millis(50));
-                translate_bt.play();
-                translate_rect.play();
+            if (r != rect){
+               if (rect.getBoundsInParent().intersects(r.getBoundsInParent())){
+                 
+               }
+            }
         }
     }
 
-    }}
+    }
