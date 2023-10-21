@@ -3,18 +3,15 @@ import javafx.animation.TranslateTransition;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
-import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.GridPane;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 import java.util.Random;
 import javafx.scene.shape.Rectangle;
-import javafx.scene.shape.Shape;
 
 //https://fxdocs.github.io/docs/html5/#_timing
 
@@ -22,38 +19,39 @@ public class UserFace extends Application implements EventHandler<ActionEvent>{
 
     Scene scene;
 
-    Button addition = new Button();
-    Button subtraction = new Button();
-    Button multiplication = new Button();
-    Button division = new Button();
-    Button equals = new Button();
-    Button zero = new Button();
-    Button one = new Button();
-    Button two = new Button();
-    Button three = new Button();
-    Button four = new Button();
-    Button five = new Button();
-    Button six = new Button();
-    Button seven = new Button();
-    Button eight = new Button();
-    Button nine = new Button();
-    Button sin = new Button();
-    Button cos = new Button();
-    Button tan = new Button();
-    Button root = new Button();
-    Button log = new Button();
-    Button exponent = new Button();
-    Button pi = new Button();
-    Button e = new Button();
-    Button openParentheses = new Button();
-    Button closeParentheses = new Button();
-    Button pun = new Button();
-    Button translate = new Button();
+    Button addition = new Button("+");
+    Button subtraction = new Button("-");
+    Button multiplication = new Button("x");
+    Button division = new Button("÷");
+    Button equals = new Button("=");
+    Button zero = new Button("0");
+    Button one = new Button("1");
+    Button two = new Button("2");
+    Button three = new Button("3");
+    Button four = new Button("4");
+    Button five = new Button("5");
+    Button six = new Button("6");
+    Button seven = new Button("7");
+    Button eight = new Button("8");
+    Button nine = new Button("9");
+    Button sin = new Button("sin");
+    Button cos = new Button("cos");
+    Button tan = new Button("tan");
+    Button root = new Button("√");
+    Button log = new Button("log");
+    Button exponent = new Button("^");
+    Button pi = new Button("π");
+    Button e = new Button("e");
+    Button openParentheses = new Button("(");
+    Button closeParentheses = new Button(")");
+    Button pun = new Button("pun");
+    Button translate = new Button("🌐");
+    Button decimal = new Button(".");
 
     Button[] allButtons = {addition, subtraction, multiplication, division, equals,
                             zero, one, two, three, four, five, six, seven, eight, 
                             nine, sin, cos, tan, root, log, exponent, pi, e, 
-                            openParentheses, closeParentheses, pun, translate};
+                            openParentheses, closeParentheses, pun, translate, decimal};
 
     Label textbox = new Label();
 
@@ -84,7 +82,9 @@ public class UserFace extends Application implements EventHandler<ActionEvent>{
     Rectangle closeParenthesesRect = new Rectangle(closeParentheses.getWidth() + 40, closeParentheses.getHeight() + 40);
     Rectangle punRect = new Rectangle(pun.getWidth() + 40, pun.getHeight() + 40);
     Rectangle translateRect = new Rectangle(translate.getWidth() + 40, translate.getHeight() + 40);
-    Rectangle textboxRect = new Rectangle(textbox.getWidth() + 400, textbox.getHeight() + 40);
+    Rectangle textboxRect = new Rectangle(textbox.getWidth() + 200, textbox.getHeight() + 40);
+    Rectangle spaceOnRight = new Rectangle(pun.getWidth() + 40, pun.getHeight() + 40);
+    Rectangle decimalRect = new Rectangle(decimal.getWidth() + 40, decimal.getHeight() + 40);
 
     Rectangle[] allRectangles = {additionRect, subtractionRect, multiplicationRect, divisionRect, equalsRect, 
                                 zeroRect, oneRect, twoRect, threeRect, fourRect, fiveRect, sixRect, sevenRect, 
@@ -94,7 +94,7 @@ public class UserFace extends Application implements EventHandler<ActionEvent>{
 
 
     String input = "";
-    //Translator theRealMath = new Translator();
+    Translator theRealMath = new Translator();
 
     public static void main(String[] args) {
         launch(args);
@@ -103,61 +103,9 @@ public class UserFace extends Application implements EventHandler<ActionEvent>{
     public void start(Stage primaryStage) throws Exception {
         primaryStage.setTitle("Rage Against the Machine");
 
-        addition.setText("+");
-        subtraction.setText("-");
-        multiplication.setText("*");
-        division.setText("/");
-        equals.setText("=");
-        zero.setText("0");
-        one.setText("1");
-        two.setText("2");
-        three.setText("3");
-        four.setText("4");
-        five.setText("5");
-        six.setText("6");
-        seven.setText("7");
-        eight .setText("8");
-        nine.setText("9");
-        sin.setText("sin(x)");
-        cos.setText("cos(x)");
-        tan.setText("tan(x)");
-        root.setText("√");
-        log.setText("log");
-        exponent.setText("^");
-        pi.setText("π");
-        e.setText("e");
-        openParentheses.setText("(");
-        closeParentheses.setText(")");
-        pun.setText("pun");
-        translate.setText("translate");
-
-        addition.setOnAction(this);
-        subtraction.setOnAction(this);
-        multiplication.setOnAction(this);
-        division.setOnAction(this);
-        equals.setOnAction(this);
-        zero.setOnAction(this);
-        one.setOnAction(this);
-        two.setOnAction(this);
-        three.setOnAction(this);
-        four.setOnAction(this);
-        five.setOnAction(this);
-        six.setOnAction(this);
-        seven.setOnAction(this);
-        eight.setOnAction(this);
-        nine.setOnAction(this);
-        six.setOnAction(this);
-        cos.setOnAction(this);
-        tan.setOnAction(this);
-        root.setOnAction(this);
-        log.setOnAction(this);
-        exponent.setOnAction(this);
-        pi.setOnAction(this);
-        e.setOnAction(this);
-        openParentheses.setOnAction(this);
-        closeParentheses.setOnAction(this);
-        pun.setOnAction(this);
-        translate.setOnAction(this);
+        for(int i = 0; i < allButtons.length; i++) {
+            allButtons[i].setOnAction(this);
+        }
 
         additionRect.setFill(Color.web("FFB5E8"));
         subtractionRect.setFill(Color.web("FF9CEE"));
@@ -187,6 +135,8 @@ public class UserFace extends Application implements EventHandler<ActionEvent>{
         punRect.setFill(Color.web("FFC9DE"));
         translateRect.setFill(Color.web("FFABAB"));
         textboxRect.setFill(Color.web("FFBEBC"));
+        spaceOnRight.setFill(Color.web("F4F4F4"));
+        decimalRect.setFill(Color.web("C3B1E1"));
 
         additionRect.setArcHeight(15.0);
         additionRect.setArcWidth(10.0);
@@ -244,21 +194,13 @@ public class UserFace extends Application implements EventHandler<ActionEvent>{
         translateRect.setArcWidth(10.0);
         textboxRect.setArcHeight(15.0);
         textboxRect.setArcWidth(10.0);
-
-        GridPane grid = new GridPane();
-        grid.setPadding(new Insets(5));
-        grid.setStyle(STYLESHEET_CASPIAN);
-        //grid.setHgap(5);
-        grid.setVgap(8);
-        //grid.setGridLinesVisible(true);
+        decimalRect.setArcHeight(15.0);
+        decimalRect.setArcWidth(10.0);
 
         AnchorPane anchor = new AnchorPane();
-       
-        equals.prefHeight(60);
-        equals.prefWidth(60);
 
         anchor.getChildren().add(equalsRect);
-        AnchorPane.setTopAnchor(equalsRect, 480.0d);
+        AnchorPane.setTopAnchor(equalsRect, 510.0d);
         AnchorPane.setLeftAnchor(equalsRect, 190.0d);
         anchor.getChildren().add(additionRect);
         AnchorPane.setTopAnchor(additionRect, 190.0d);
@@ -268,39 +210,39 @@ public class UserFace extends Application implements EventHandler<ActionEvent>{
         AnchorPane.setLeftAnchor(subtractionRect, 130.0d);
         anchor.getChildren().add(multiplicationRect);
         AnchorPane.setTopAnchor(multiplicationRect, 190.0d);
-        AnchorPane.setLeftAnchor(multiplicationRect, 290.0d);
+        AnchorPane.setLeftAnchor(multiplicationRect, 250.0d);
         anchor.getChildren().add(divisionRect);
         AnchorPane.setTopAnchor(divisionRect, 190.0d);
-        AnchorPane.setLeftAnchor(divisionRect, 220.0d);
+        AnchorPane.setLeftAnchor(divisionRect, 190.0d);
         anchor.getChildren().add(zeroRect);
-        AnchorPane.setTopAnchor(zeroRect, 480.0d);
+        AnchorPane.setTopAnchor(zeroRect, 510.0d);
         AnchorPane.setLeftAnchor(zeroRect, 130.0d);
         anchor.getChildren().add(oneRect);
-        AnchorPane.setTopAnchor(oneRect, 280.0d);
+        AnchorPane.setTopAnchor(oneRect, 310.0d);
         AnchorPane.setLeftAnchor(oneRect, 70.0d);
         anchor.getChildren().add(twoRect);
-        AnchorPane.setTopAnchor(twoRect, 280.0d);
+        AnchorPane.setTopAnchor(twoRect, 310.0d);
         AnchorPane.setLeftAnchor(twoRect, 130.0d);
         anchor.getChildren().add(threeRect);
-        AnchorPane.setTopAnchor(threeRect, 280.0d);
+        AnchorPane.setTopAnchor(threeRect, 310.0d);
         AnchorPane.setLeftAnchor(threeRect, 190.0d);
         anchor.getChildren().add(fourRect);
-        AnchorPane.setTopAnchor(fourRect, 340.0d);
+        AnchorPane.setTopAnchor(fourRect, 370.0d);
         AnchorPane.setLeftAnchor(fourRect, 70.0d);
         anchor.getChildren().add(fiveRect);
-        AnchorPane.setTopAnchor(fiveRect, 340.0d);
+        AnchorPane.setTopAnchor(fiveRect, 370.0d);
         AnchorPane.setLeftAnchor(fiveRect, 130.0d);
         anchor.getChildren().add(sixRect);
-        AnchorPane.setTopAnchor(sixRect, 340.0d);
+        AnchorPane.setTopAnchor(sixRect, 370.0d);
         AnchorPane.setLeftAnchor(sixRect, 190.0d);
         anchor.getChildren().add(sevenRect);
-        AnchorPane.setTopAnchor(sevenRect, 400.0d);
+        AnchorPane.setTopAnchor(sevenRect, 430.0d);
         AnchorPane.setLeftAnchor(sevenRect, 70.0d);
         anchor.getChildren().add(eightRect);
-        AnchorPane.setTopAnchor(eightRect, 400.0d);
+        AnchorPane.setTopAnchor(eightRect, 430.0d);
         AnchorPane.setLeftAnchor(eightRect, 130.0d);
         anchor.getChildren().add(nineRect);
-        AnchorPane.setTopAnchor(nineRect, 400.0d);
+        AnchorPane.setTopAnchor(nineRect, 430.0d);
         AnchorPane.setLeftAnchor(nineRect, 190.0d);
         anchor.getChildren().add(cosRect);
         AnchorPane.setTopAnchor(cosRect, 130.0d);
@@ -313,121 +255,130 @@ public class UserFace extends Application implements EventHandler<ActionEvent>{
         AnchorPane.setLeftAnchor(tanRect, 190.0d);
         anchor.getChildren().add(rootRect);
         AnchorPane.setTopAnchor(rootRect, 70.0d);
-        AnchorPane.setLeftAnchor(rootRect, 240.0d);
+        AnchorPane.setLeftAnchor(rootRect, 190.0d);
         anchor.getChildren().add(logRect);
         AnchorPane.setTopAnchor(logRect, 70.0d);
-        AnchorPane.setLeftAnchor(logRect, 300.0d);
+        AnchorPane.setLeftAnchor(logRect, 70.0d);
         anchor.getChildren().add(exponentRect);
-        AnchorPane.setTopAnchor(exponentRect, 120.0d);
-        AnchorPane.setLeftAnchor(exponentRect, 60.0d);
+        AnchorPane.setTopAnchor(exponentRect, 10.0d);
+        AnchorPane.setLeftAnchor(exponentRect, 70.0d);
         anchor.getChildren().add(eRect);
         AnchorPane.setTopAnchor(eRect, 70.0d);
-        AnchorPane.setLeftAnchor(eRect, 120.0d);
+        AnchorPane.setLeftAnchor(eRect, 130.0d);
         anchor.getChildren().add(piRect);
-        AnchorPane.setTopAnchor(piRect, 120.0d);
-        AnchorPane.setLeftAnchor(piRect, 180.0d);
+        AnchorPane.setTopAnchor(piRect, 10.0d);
+        AnchorPane.setLeftAnchor(piRect, 250.0d);
         anchor.getChildren().add(openParenthesesRect);
-        AnchorPane.setTopAnchor(openParenthesesRect, 180.0d);
-        AnchorPane.setLeftAnchor(openParenthesesRect, 60.0d);
+        AnchorPane.setTopAnchor(openParenthesesRect, 70.0d);
+        AnchorPane.setLeftAnchor(openParenthesesRect, 250.0d);
         anchor.getChildren().add(closeParenthesesRect);
-        AnchorPane.setTopAnchor(closeParenthesesRect, 180.0d);
-        AnchorPane.setLeftAnchor(closeParenthesesRect, 120.0d);
+        AnchorPane.setTopAnchor(closeParenthesesRect, 130.0d);
+        AnchorPane.setLeftAnchor(closeParenthesesRect, 250.0d);
         anchor.getChildren().add(punRect);
-        AnchorPane.setTopAnchor(punRect, 180.0d);
-        AnchorPane.setLeftAnchor(punRect, 180.0d);
+        AnchorPane.setTopAnchor(punRect, 10.0d);
+        AnchorPane.setLeftAnchor(punRect, 130.0d);
         anchor.getChildren().add(translateRect);
-        AnchorPane.setTopAnchor(translateRect, 180.0d);
-        AnchorPane.setLeftAnchor(translateRect, 240.0d);
+        AnchorPane.setTopAnchor(translateRect, 10.0d);
+        AnchorPane.setLeftAnchor(translateRect, 190.0d);
         anchor.getChildren().add(textboxRect);
-        AnchorPane.setTopAnchor(textboxRect, 240.0d);
-        AnchorPane.setLeftAnchor(textboxRect, 60.0d);
+        AnchorPane.setTopAnchor(textboxRect, 250.0d);
+        AnchorPane.setLeftAnchor(textboxRect, 70.0d);
+        anchor.getChildren().add(spaceOnRight);
+        AnchorPane.setTopAnchor(spaceOnRight, 10.0);
+        AnchorPane.setLeftAnchor(spaceOnRight, 310.0);
+        anchor.getChildren().add(decimalRect);
+        AnchorPane.setTopAnchor(decimalRect, 510.0);
+        AnchorPane.setLeftAnchor(decimalRect, 70.0);
         
 
 
         anchor.getChildren().add(equals);
-        AnchorPane.setTopAnchor(equals, 10.0d);
-        AnchorPane.setLeftAnchor(equals, 120.0d);
+        AnchorPane.setTopAnchor(equals, 510.0d);
+        AnchorPane.setLeftAnchor(equals, 130.0d);
         anchor.getChildren().add(addition);
-        AnchorPane.setTopAnchor(addition, 60.0d);
-        AnchorPane.setLeftAnchor(addition, 10.0d);
+        AnchorPane.setTopAnchor(addition, 190.0d);
+        AnchorPane.setLeftAnchor(addition, 70.0d);
         anchor.getChildren().add(subtraction);
-        AnchorPane.setTopAnchor(subtraction, 10.0d);
-        AnchorPane.setLeftAnchor(subtraction, 10.0d);
+        AnchorPane.setTopAnchor(subtraction, 190.0d);
+        AnchorPane.setLeftAnchor(subtraction, 130.0d);
         anchor.getChildren().add(multiplication);
-        AnchorPane.setTopAnchor(multiplication, 120.0d);
-        AnchorPane.setLeftAnchor(multiplication, 10.0d);
+        AnchorPane.setTopAnchor(multiplication, 190.0d);
+        AnchorPane.setLeftAnchor(multiplication, 250.0d);
         anchor.getChildren().add(division);
-        AnchorPane.setTopAnchor(division, 10.0d);
-        AnchorPane.setLeftAnchor(division, 170.0d);
+        AnchorPane.setTopAnchor(division, 190.0d);
+        AnchorPane.setLeftAnchor(division, 190.0d);
         anchor.getChildren().add(zero);
-        AnchorPane.setTopAnchor(zero, 10.0d);
-        AnchorPane.setLeftAnchor(zero, 60.0d);
+        AnchorPane.setTopAnchor(zero, 510.0d);
+        AnchorPane.setLeftAnchor(zero, 190.0d);
         anchor.getChildren().add(one);
-        AnchorPane.setTopAnchor(one, 10.0d);
-        AnchorPane.setLeftAnchor(one, 220.0d);
+        AnchorPane.setTopAnchor(one, 310.0d);
+        AnchorPane.setLeftAnchor(one, 70.0d);
         anchor.getChildren().add(two);
-        AnchorPane.setTopAnchor(two, 120.0d);
-        AnchorPane.setLeftAnchor(two, 10.0d);
+        AnchorPane.setTopAnchor(two, 310.0d);
+        AnchorPane.setLeftAnchor(two, 130.0d);
         anchor.getChildren().add(three);
-        AnchorPane.setTopAnchor(three, 180.0d);
-        AnchorPane.setLeftAnchor(three, 10.0d);
+        AnchorPane.setTopAnchor(three, 310.0d);
+        AnchorPane.setLeftAnchor(three, 190.0d);
         anchor.getChildren().add(four);
-        AnchorPane.setTopAnchor(four, 240.0d);
-        AnchorPane.setLeftAnchor(four, 10.0d);
+        AnchorPane.setTopAnchor(four, 370.0d);
+        AnchorPane.setLeftAnchor(four, 70.0d);
         anchor.getChildren().add(five);
-        AnchorPane.setTopAnchor(five, 300.0d);
-        AnchorPane.setLeftAnchor(five, 10.0d);
+        AnchorPane.setTopAnchor(five, 370.0d);
+        AnchorPane.setLeftAnchor(five, 130.0d);
         anchor.getChildren().add(six);
-        AnchorPane.setTopAnchor(six, 360.0d);
-        AnchorPane.setLeftAnchor(six, 10.0d);
+        AnchorPane.setTopAnchor(six, 370.0d);
+        AnchorPane.setLeftAnchor(six, 190.0d);
         anchor.getChildren().add(seven);
-        AnchorPane.setTopAnchor(seven, 420.0d);
-        AnchorPane.setLeftAnchor(seven, 10.0d);
+        AnchorPane.setTopAnchor(seven, 430.0d);
+        AnchorPane.setLeftAnchor(seven, 70.0d);
         anchor.getChildren().add(eight);
-        AnchorPane.setTopAnchor(eight, 480.0d);
-        AnchorPane.setLeftAnchor(eight, 10.0d);
+        AnchorPane.setTopAnchor(eight, 430.0d);
+        AnchorPane.setLeftAnchor(eight, 130.0d);
         anchor.getChildren().add(nine);
-        AnchorPane.setTopAnchor(nine, 530.0d);
-        AnchorPane.setLeftAnchor(nine, 10.0d);
+        AnchorPane.setTopAnchor(nine, 430.0d);
+        AnchorPane.setLeftAnchor(nine, 190.0d);
         anchor.getChildren().add(cos);
-        AnchorPane.setTopAnchor(cos, 60.0d);
-        AnchorPane.setLeftAnchor(cos, 60.0d);
+        AnchorPane.setTopAnchor(cos, 130.0d);
+        AnchorPane.setLeftAnchor(cos, 70.0d);
         anchor.getChildren().add(sin);
-        AnchorPane.setTopAnchor(sin, 60.0d);
-        AnchorPane.setLeftAnchor(sin, 120.0d);
+        AnchorPane.setTopAnchor(sin, 130.0d);
+        AnchorPane.setLeftAnchor(sin, 130.0d);
         anchor.getChildren().add(tan);
-        AnchorPane.setTopAnchor(tan, 60.0d);
-        AnchorPane.setLeftAnchor(tan, 180.0d);
+        AnchorPane.setTopAnchor(tan, 130.0d);
+        AnchorPane.setLeftAnchor(tan, 190.0d);
         anchor.getChildren().add(root);
-        AnchorPane.setTopAnchor(root, 60.0d);
-        AnchorPane.setLeftAnchor(root, 240.0d);
+        AnchorPane.setTopAnchor(root, 70.0d);
+        AnchorPane.setLeftAnchor(root, 190.0d);
         anchor.getChildren().add(log);
-        AnchorPane.setTopAnchor(log, 60.0d);
-        AnchorPane.setLeftAnchor(log, 300.0d);
+        AnchorPane.setTopAnchor(log, 70.0d);
+        AnchorPane.setLeftAnchor(log, 70.0d);
         anchor.getChildren().add(exponent);
-        AnchorPane.setTopAnchor(exponent, 120.0d);
-        AnchorPane.setLeftAnchor(exponent, 60.0d);
+        AnchorPane.setTopAnchor(exponent, 10.0d);
+        AnchorPane.setLeftAnchor(exponent, 70.0d);
         anchor.getChildren().add(e);
-        AnchorPane.setTopAnchor(e, 120.0d);
-        AnchorPane.setLeftAnchor(e, 120.0d);
+        AnchorPane.setTopAnchor(e, 70.0d);
+        AnchorPane.setLeftAnchor(e, 130.0d);
         anchor.getChildren().add(pi);
-        AnchorPane.setTopAnchor(pi, 120.0d);
-        AnchorPane.setLeftAnchor(pi, 180.0d);
+        AnchorPane.setTopAnchor(pi, 10.0d);
+        AnchorPane.setLeftAnchor(pi, 250.0d);
         anchor.getChildren().add(openParentheses);
-        AnchorPane.setTopAnchor(openParentheses, 180.0d);
-        AnchorPane.setLeftAnchor(openParentheses, 60.0d);
+        AnchorPane.setTopAnchor(openParentheses, 70.0d);
+        AnchorPane.setLeftAnchor(openParentheses, 250.0d);
         anchor.getChildren().add(closeParentheses);
-        AnchorPane.setTopAnchor(closeParentheses, 180.0);
-        AnchorPane.setLeftAnchor(closeParentheses, 120.0d);
+        AnchorPane.setTopAnchor(closeParentheses, 130.0);
+        AnchorPane.setLeftAnchor(closeParentheses, 250.0d);
         anchor.getChildren().add(pun);
-        AnchorPane.setTopAnchor(pun, 180.0d);
-        AnchorPane.setLeftAnchor(pun, 180.0d);
+        AnchorPane.setTopAnchor(pun, 10.0d);
+        AnchorPane.setLeftAnchor(pun, 130.0d);
         anchor.getChildren().add(translate);
-        AnchorPane.setTopAnchor(translate, 180.0d);
-        AnchorPane.setLeftAnchor(translate, 240.0d);
+        AnchorPane.setTopAnchor(translate, 10.0d);
+        AnchorPane.setLeftAnchor(translate, 190.0d);
         anchor.getChildren().add(textbox);
-        AnchorPane.setTopAnchor(textbox, 240.0d);
-        AnchorPane.setLeftAnchor(textbox, 60.0d);
+        AnchorPane.setTopAnchor(textbox, 250.0d);
+        AnchorPane.setLeftAnchor(textbox, 70.0d);
+        anchor.getChildren().add(decimal);
+        AnchorPane.setTopAnchor(decimal, 510.0d);
+        AnchorPane.setLeftAnchor(decimal, 70.0d);
         
 
         //scene = new Scene(grid, 300, 600, Color.BLACK);
@@ -643,7 +594,7 @@ public class UserFace extends Application implements EventHandler<ActionEvent>{
 
     @Override
     public void handle(ActionEvent event ) {
-        if (event.getSource() != equals && event.getSource() != pun && event.getSource() != translate) {
+        if (event.getSource() != equals && event.getSource() != translate) {
             String currentInput = event.getSource().toString();
             input += event.getSource().toString().substring(currentInput.indexOf("'") + 1, currentInput.lastIndexOf("'"));
             textbox.setText(input);
@@ -661,7 +612,7 @@ public class UserFace extends Application implements EventHandler<ActionEvent>{
                 case 2: //portugese 
                     translate.setText("traduzir");
                     pun.setText("trocadilho");
-                    equals.setText("digitar");
+                    equals.setText("executar");
                     translateRect.setWidth(translate.getWidth() + 40);
                     break;
                 case 3: //spanish
@@ -673,13 +624,13 @@ public class UserFace extends Application implements EventHandler<ActionEvent>{
                 case 4: //french
                     translate.setText("traduire");
                     pun.setText("calembour");
-                    equals.setText("équivaut à");
+                    equals.setText("exécuter");
                     translateRect.setWidth(translate.getWidth() + 40);
                     break;
                 case 5: //italian
                     translate.setText("tradurre");
                     pun.setText("gioco di parole");
-                    equals.setText("equivale");
+                    equals.setText("eseguire");
                     translateRect.setWidth(translate.getWidth() + 40);
                     break;
                 case 6: //russian
@@ -698,14 +649,12 @@ public class UserFace extends Application implements EventHandler<ActionEvent>{
             }
         }
         if (event.getSource() == pun) {
-            System.out.println(openParentheses.getLayoutX());
-            System.out.println(scene.getHeight() + "| height");
-            System.out.println(scene.getWidth() + "| width");
-            System.out.println(scene.getX() + "| x");
-            System.out.println(scene.getY() + "| y");
+            Random randy = new Random();
+            
         }
         if (event.getSource() == equals) {
-            //theRealMath.getInput(input);
+            theRealMath.getInput(input);
+            //change text on textbox w/ answer
         }
         if (event.getSource() == addition) {
             System.out.println(addition.getLayoutX() + "| x");
