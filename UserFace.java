@@ -12,6 +12,9 @@ import javafx.stage.Stage;
 import javafx.util.Duration;
 import java.util.Random;
 import javafx.scene.shape.Rectangle;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
+import javafx.scene.media.MediaView;  
 
 //https://fxdocs.github.io/docs/html5/#_timing
 
@@ -101,6 +104,7 @@ public class UserFace extends Application implements EventHandler<ActionEvent>{
     }
 
     public void start(Stage primaryStage) throws Exception {
+
         primaryStage.setTitle("Rage Against the Machine");
 
         for(int i = 0; i < allButtons.length; i++) {
@@ -388,6 +392,10 @@ public class UserFace extends Application implements EventHandler<ActionEvent>{
         primaryStage.setResizable(false);
         primaryStage.show();
 
+        Media media = new Media ("https://ia801509.us.archive.org/10/items/Rick_Astley_Never_Gonna_Give_You_Up/Rick_Astley_Never_Gonna_Give_You_Up.mp4");
+        MediaPlayer mediaPlayer = new MediaPlayer(media);  
+        mediaPlayer.setAutoPlay(true);  
+
 
         TranslateTransition translate_addition = new TranslateTransition();  
         translate_addition.setNode(addition);  
@@ -514,6 +522,23 @@ public class UserFace extends Application implements EventHandler<ActionEvent>{
         TranslateTransition translate_closeParenthesesRect = new TranslateTransition();  
         translate_closeParenthesesRect.setNode(closeParenthesesRect); 
 
+        Media media_classic = new Media ("/Sounds/minecraft_click.mp3");
+        MediaPlayer mediaPlayer_classic = new MediaPlayer(media);  
+
+        Media media_nice = new Media ("/Sounds/-click-nice_1.mp3");
+        MediaPlayer mediaPlayer_nice = new MediaPlayer(media);  
+
+        Media media_blow = new Media ("/Sounds/blow2_1.mp3");
+        MediaPlayer mediaPlayer_blow = new MediaPlayer(media);  
+
+        Media media_ball = new Media ("/Sounds/came-in-like-a-wrecking-ball.mp3");
+        MediaPlayer mediaPlayer_ball = new MediaPlayer(media);  
+
+        Media media_last_of_us = new Media ("/Sounds/the-last-of-us-clicker-sound-dlive.mp3");
+        MediaPlayer mediaPlayer_last_of_us = new MediaPlayer(media);  
+
+        Media media_sus = new Media ("/Sounds/totally-not-a-suspicious-button.mp3");
+        MediaPlayer mediaPlayer_sus = new MediaPlayer(media);  
 
         additionRect.setOnMouseEntered(event -> {
             move(translate_addition, translate_additionRect, addition, additionRect);
@@ -590,6 +615,93 @@ public class UserFace extends Application implements EventHandler<ActionEvent>{
         closeParenthesesRect.setOnMouseEntered(event -> {
             move(translate_closeParentheses, translate_closeParenthesesRect, closeParentheses, closeParenthesesRect);
             });
+
+        addition.setOnMouseClicked(event-> {
+            mediaPlayer_classic.play();
+        });
+        subtraction.setOnMouseClicked(event-> {
+            mediaPlayer_classic.play();
+        });
+        multiplication.setOnMouseClicked(event-> {
+            mediaPlayer_classic.play();
+        });
+        division.setOnMouseClicked(event-> {
+            mediaPlayer_classic.play();
+        });
+        equals.setOnMouseClicked(event-> {
+            mediaPlayer_nice.play();
+        });
+        zero.setOnMouseClicked(event-> {
+            mediaPlayer_classic.play();
+        });
+        one.setOnMouseClicked(event-> {
+            mediaPlayer_classic.play();
+        });
+        two.setOnMouseClicked(event-> {
+            mediaPlayer_classic.play();
+        });
+        three.setOnMouseClicked(event-> {
+            mediaPlayer_classic.play();
+        });
+        four.setOnMouseClicked(event-> {
+            mediaPlayer_classic.play();
+        });
+        five.setOnMouseClicked(event-> {
+            mediaPlayer_classic.play();
+        });
+        six.setOnMouseClicked(event-> {
+            mediaPlayer_classic.play();
+        });
+        seven.setOnMouseClicked(event-> {
+            mediaPlayer_classic.play();
+        });
+        eight.setOnMouseClicked(event-> {
+            mediaPlayer_classic.play();
+        });
+        nine.setOnMouseClicked(event-> {
+            mediaPlayer_classic.play();
+        });
+        sin.setOnMouseClicked(event-> {
+            mediaPlayer_classic.play();
+        });
+        cos.setOnMouseClicked(event-> {
+            mediaPlayer_classic.play();
+        });
+        tan.setOnMouseClicked(event-> {
+            mediaPlayer_classic.play();
+        });
+        root.setOnMouseClicked(event-> {
+            mediaPlayer_classic.play();
+        });
+        log.setOnMouseClicked(event-> {
+            mediaPlayer_classic.play();
+        });
+        exponent.setOnMouseClicked(event-> {
+            mediaPlayer_sus.play();
+        });
+        pi.setOnMouseClicked(event-> {
+            mediaPlayer_classic.play();
+        });
+        e.setOnMouseClicked(event-> {
+            mediaPlayer_classic.play();
+        });
+        openParentheses.setOnMouseClicked(event-> {
+            mediaPlayer_classic.play();
+        });
+        closeParentheses.setOnMouseClicked(event-> {
+            mediaPlayer_classic.play();
+        });
+        pun.setOnMouseClicked(event-> {
+            mediaPlayer_blow.play();
+        });
+        translate.setOnMouseClicked(event-> {
+            mediaPlayer_last_of_us.play();
+        });
+        decimal.setOnMouseClicked(event-> {
+            mediaPlayer_ball.play();
+        });
+
+
     }
 
     @Override
@@ -693,7 +805,18 @@ public class UserFace extends Application implements EventHandler<ActionEvent>{
         for (Rectangle r: allRectangles) {
             if (r != rect){
                if (rect.getBoundsInParent().intersects(r.getBoundsInParent())){
-                 
+                int x = rand.nextInt((120) + 1);
+                int y = rand.nextInt((500) + 1);
+        
+                translate_bt.setToX(x);
+                translate_bt.setToY(y);
+                translate_rect.setToX(x);
+                translate_rect.setToY(y);
+                
+                translate_bt.setDuration(Duration.millis(50));
+                translate_rect.setDuration(Duration.millis(50));
+                translate_bt.play();
+                translate_rect.play();
                }
             }
         }
