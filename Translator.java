@@ -35,7 +35,9 @@ public class Translator {
           
       }
     }
-    public static int recurSolve(char [] equation, int i, int j){
+    // what happens when there isn't a 
+
+    public static int recurSolve( int i, int j){
       ArrayList<Integer> rNums = new ArrayList<>();
       ArrayList<Character> rOperators = new ArrayList<>();
       //to handle parenthesis within parenthesis within parenthesis 
@@ -63,18 +65,23 @@ public class Translator {
       
     }
 
-    public static int parenthesesEd(int index){
+    public static int parenthesesEd(int index, char n){
       if (n == '(') {
-              //loop through till you find the end parenthesis and pass in the seperated eq.
-              for (int j = i; j < equation.length; j++){
-                n = equation[j]; 
-                if (n == ')'){
-                  int ultRizz = Translator.recurSolve(equation,i,j);
-                  nums.add(ultRizz);
-                  i = j; 
-                  break;  
-                }
-              }
+        //loop through till you find the end parenthesis and pass in the seperated eq.
+        //if you find another open parenthesis, recurse through the method again
+        // Return the ult_rizz, index of equation after evaluating parenthesis-ed sub equation & if the parenthesis was a coefficient(0) or another operator before it (1)
+        for (int j = index; j < equation.length; j++){
+          n = equation[j]; 
+          if (n == '('){
+            parenthesesEd(j+1, equation[j+1]);
+          }
+          if (n == ')'){
+            return Translator.recurSolve(j+1,equation[j+1]);
+            index = j; 
+            break;  
+          }
+        }
+      }
     } 
 
     public static int wholeNum(char s, int index){
