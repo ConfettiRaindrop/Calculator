@@ -14,7 +14,6 @@ import java.util.Random;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
-import javafx.scene.media.MediaView;  
 
 //https://fxdocs.github.io/docs/html5/#_timing
 
@@ -523,22 +522,22 @@ public class UserFace extends Application implements EventHandler<ActionEvent>{
         translate_closeParenthesesRect.setNode(closeParenthesesRect); 
 
         Media media_classic = new Media ("/Sounds/minecraft_click.mp3");
-        MediaPlayer mediaPlayer_classic = new MediaPlayer(media);  
+        MediaPlayer mediaPlayer_classic = new MediaPlayer(media_classic);  
 
         Media media_nice = new Media ("/Sounds/-click-nice_1.mp3");
-        MediaPlayer mediaPlayer_nice = new MediaPlayer(media);  
+        MediaPlayer mediaPlayer_nice = new MediaPlayer(media_nice);  
 
         Media media_blow = new Media ("/Sounds/blow2_1.mp3");
-        MediaPlayer mediaPlayer_blow = new MediaPlayer(media);  
+        MediaPlayer mediaPlayer_blow = new MediaPlayer(media_blow);  
 
         Media media_ball = new Media ("/Sounds/came-in-like-a-wrecking-ball.mp3");
-        MediaPlayer mediaPlayer_ball = new MediaPlayer(media);  
+        MediaPlayer mediaPlayer_ball = new MediaPlayer(media_ball);  
 
         Media media_last_of_us = new Media ("/Sounds/the-last-of-us-clicker-sound-dlive.mp3");
-        MediaPlayer mediaPlayer_last_of_us = new MediaPlayer(media);  
+        MediaPlayer mediaPlayer_last_of_us = new MediaPlayer(media_last_of_us);  
 
         Media media_sus = new Media ("/Sounds/totally-not-a-suspicious-button.mp3");
-        MediaPlayer mediaPlayer_sus = new MediaPlayer(media);  
+        MediaPlayer mediaPlayer_sus = new MediaPlayer(media_sus);  
 
         additionRect.setOnMouseEntered(event -> {
             move(translate_addition, translate_additionRect, addition, additionRect);
@@ -800,8 +799,6 @@ public class UserFace extends Application implements EventHandler<ActionEvent>{
 
     public void checkCollision(TranslateTransition translate_bt, TranslateTransition translate_rect, Button bt, Rectangle rect){
         Random rand = new Random();
-        int i = 0;
-        boolean collisionDetected = false;
         for (Rectangle r: allRectangles) {
             if (r != rect){
                if (rect.getBoundsInParent().intersects(r.getBoundsInParent())){
