@@ -17,7 +17,12 @@ import javafx.scene.shape.Rectangle;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 
-//https://fxdocs.github.io/docs/html5/#_timing
+/*sources:
+ * https://fxdocs.github.io/docs/html5/#_introduction
+ * https://docs.oracle.com/javase/8/javafx/api/toc.htm
+ * https://stackoverflow.com/questions/26460078/resize-a-button-javafx
+ * https://www.youtube.com/playlist?list=PL6gx4Cwl9DGBzfXLWLSYVy8EbTdpGbUIG
+ */
 
 public class UserFace extends Application implements EventHandler<ActionEvent>{
 
