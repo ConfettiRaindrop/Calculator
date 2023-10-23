@@ -156,7 +156,7 @@ public class Translator {
       }
     }
 
-    public static String isValid(){
+    public String isValid(){
       if (nums.size() <= operators.size()){
         return "invalid input";
       }else{

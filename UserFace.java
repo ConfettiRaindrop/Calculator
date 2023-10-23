@@ -99,6 +99,25 @@ public class UserFace extends Application implements EventHandler<ActionEvent>{
 
     String input = "";
     Translator theRealMath = new Translator();
+    private static String[] puns = ("Heinz should have seen that coming\r\n" + //
+            "Soy Sauce on deez nuts\r\n" + //
+            "In Heinz sight\r\n" + //
+            "Are you ketchup because you make me red and hot\r\n" + //
+            "ketchup with deez nuts\r\n" + //
+            "I loaf these jokes\r\n" + //
+            "there's nothing I yeast more than getting a rise out of you\r\n" + //
+            "I loaf you\r\n" + //
+            "ketchup with me\r\n" + //
+            "I'm not procrastinating, I'm procrustinating!\r\n" + //
+            "I'm not procrastinating, I'm prosaucinating!\r\n" + //
+            "Look, I know that you love giving me ketchup, but you can't Kikkoman while hes down.\r\n" + //
+            "Are you soy about this?\r\n" + //
+            "You look soy tired\r\n" + //
+            "Try not to be too salty about this\r\n" + //
+            "Have you ever been described as SOYdium cholride?\r\n" + //
+            "I was looking at the dictionary earlier, but saw some SOYda lime and couldn't check what it meant - do you know?\r\n" + //
+            "Are you willing to do that in this SOYciety?\r\n" + //
+            "SOYanara").split("\r\n");
 
     public static void main(String[] args) {
         launch(args);
@@ -206,13 +225,13 @@ public class UserFace extends Application implements EventHandler<ActionEvent>{
 
         anchor.getChildren().add(equalsRect);
         AnchorPane.setTopAnchor(equalsRect, 510.0d);
-        AnchorPane.setLeftAnchor(equalsRect, 190.0d);
+        AnchorPane.setLeftAnchor(equalsRect, 130.0d);
         anchor.getChildren().add(additionRect);
         AnchorPane.setTopAnchor(additionRect, 190.0d);
         AnchorPane.setLeftAnchor(additionRect, 70.0d);
         anchor.getChildren().add(subtractionRect);
         AnchorPane.setTopAnchor(subtractionRect, 190.0d);
-        AnchorPane.setLeftAnchor(subtractionRect, 130.0d);
+        AnchorPane.setLeftAnchor(subtractionRect, 190.0d);
         anchor.getChildren().add(multiplicationRect);
         AnchorPane.setTopAnchor(multiplicationRect, 190.0d);
         AnchorPane.setLeftAnchor(multiplicationRect, 250.0d);
@@ -763,11 +782,13 @@ public class UserFace extends Application implements EventHandler<ActionEvent>{
         }
         if (event.getSource() == pun) {
             Random randy = new Random();
+            int pun = randy.nextInt(puns.length);
+            textbox.setText(puns[pun]);
             
         }
         if (event.getSource() == equals) {
             theRealMath.getInput(input);
-            //change text on textbox w/ answer
+            textbox.setText(theRealMath.isValid());
         }
         if (event.getSource() == addition) {
             System.out.println(addition.getLayoutX() + "| x");
