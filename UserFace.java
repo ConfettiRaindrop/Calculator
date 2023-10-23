@@ -10,6 +10,8 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import javafx.util.Duration;
+
+import java.nio.file.Paths;
 import java.util.Random;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.media.Media;
@@ -521,22 +523,22 @@ public class UserFace extends Application implements EventHandler<ActionEvent>{
         TranslateTransition translate_closeParenthesesRect = new TranslateTransition();  
         translate_closeParenthesesRect.setNode(closeParenthesesRect); 
 
-        Media media_classic = new Media ("/Sounds/minecraft_click.mp3");
+        Media media_classic = new Media(Paths.get("minecraft_click.mp3").toUri().toString());
         MediaPlayer mediaPlayer_classic = new MediaPlayer(media_classic);  
 
-        Media media_nice = new Media ("/Sounds/-click-nice_1.mp3");
+        Media media_nice = new Media(Paths.get("-click-nice_1.mp3").toUri().toString());
         MediaPlayer mediaPlayer_nice = new MediaPlayer(media_nice);  
 
-        Media media_blow = new Media ("/Sounds/blow2_1.mp3");
+        Media media_blow = new Media(Paths.get("blow2_1.mp3").toUri().toString());
         MediaPlayer mediaPlayer_blow = new MediaPlayer(media_blow);  
 
-        Media media_ball = new Media ("/Sounds/came-in-like-a-wrecking-ball.mp3");
+        Media media_ball = new Media(Paths.get("came-in-like-a-wrecking-ball.mp3").toUri().toString());
         MediaPlayer mediaPlayer_ball = new MediaPlayer(media_ball);  
 
-        Media media_last_of_us = new Media ("/Sounds/the-last-of-us-clicker-sound-dlive.mp3");
+        Media media_last_of_us = new Media(Paths.get("the-last-of-us-clicker-sound-dlive.mp3").toUri().toString());
         MediaPlayer mediaPlayer_last_of_us = new MediaPlayer(media_last_of_us);  
 
-        Media media_sus = new Media ("/Sounds/totally-not-a-suspicious-button.mp3");
+        Media media_sus = new Media(Paths.get("totally-not-a-suspicious-button.mp3").toUri().toString());
         MediaPlayer mediaPlayer_sus = new MediaPlayer(media_sus);  
 
         additionRect.setOnMouseEntered(event -> {
