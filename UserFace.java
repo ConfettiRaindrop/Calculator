@@ -757,7 +757,6 @@ public class UserFace extends Application implements EventHandler<ActionEvent>{
             String currentInput = event.getSource().toString();
             input += event.getSource().toString().substring(currentInput.indexOf("'") + 1, currentInput.lastIndexOf("'"));
             textbox.setText(input);
-            System.out.println(input);
         } else if (event.getSource() == translate) {
             Random rand = new Random();
             int lang = rand.nextInt(7) + 1;
