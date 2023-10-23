@@ -51,11 +51,13 @@ public class UserFace extends Application implements EventHandler<ActionEvent>{
     Button pun = new Button("pun");
     Button translate = new Button("🌐");
     Button decimal = new Button(".");
+    Button clear = new Button("clear");
 
     Button[] allButtons = {addition, subtraction, multiplication, division, equals,
                             zero, one, two, three, four, five, six, seven, eight, 
                             nine, sin, cos, tan, root, log, exponent, pi, e, 
-                            openParentheses, closeParentheses, pun, translate, decimal};
+                            openParentheses, closeParentheses, pun, translate,
+                            decimal, clear};
 
     Label textbox = new Label();
 
@@ -89,16 +91,19 @@ public class UserFace extends Application implements EventHandler<ActionEvent>{
     Rectangle textboxRect = new Rectangle(textbox.getWidth() + 200, textbox.getHeight() + 40);
     Rectangle spaceOnRight = new Rectangle(pun.getWidth() + 40, pun.getHeight() + 40);
     Rectangle decimalRect = new Rectangle(decimal.getWidth() + 40, decimal.getHeight() + 40);
+    Rectangle clearRect = new Rectangle(clear.getWidth() + 40, clear.getHeight() + 40);
 
     Rectangle[] allRectangles = {additionRect, subtractionRect, multiplicationRect, divisionRect, equalsRect, 
                                 zeroRect, oneRect, twoRect, threeRect, fourRect, fiveRect, sixRect, sevenRect, 
                                 eightRect, nineRect, sinRect, cosRect, tanRect, rootRect, logRect, exponentRect,
-                                piRect, eRect, openParenthesesRect, closeParenthesesRect, punRect, translateRect, textboxRect};
+                                piRect, eRect, openParenthesesRect, closeParenthesesRect, punRect, translateRect,
+                                textboxRect, decimalRect, clearRect};
 
 
 
     String input = "";
     Translator theRealMath = new Translator();
+    boolean isPun = false;
     private static String[] puns = ("Heinz should have seen that coming\r\n" + //
             "Soy Sauce on deez nuts\r\n" + //
             "In Heinz sight\r\n" + //
@@ -161,6 +166,7 @@ public class UserFace extends Application implements EventHandler<ActionEvent>{
         textboxRect.setFill(Color.web("FFBEBC"));
         spaceOnRight.setFill(Color.web("F4F4F4"));
         decimalRect.setFill(Color.web("C3B1E1"));
+        clearRect.setFill(Color.web("D4FAFA"));
 
         additionRect.setArcHeight(15.0);
         additionRect.setArcWidth(10.0);
@@ -220,6 +226,8 @@ public class UserFace extends Application implements EventHandler<ActionEvent>{
         textboxRect.setArcWidth(10.0);
         decimalRect.setArcHeight(15.0);
         decimalRect.setArcWidth(10.0);
+        clearRect.setArcHeight(15.0);
+        clearRect.setArcWidth(10.0);
 
         AnchorPane anchor = new AnchorPane();
 
@@ -231,7 +239,7 @@ public class UserFace extends Application implements EventHandler<ActionEvent>{
         AnchorPane.setLeftAnchor(additionRect, 70.0d);
         anchor.getChildren().add(subtractionRect);
         AnchorPane.setTopAnchor(subtractionRect, 190.0d);
-        AnchorPane.setLeftAnchor(subtractionRect, 190.0d);
+        AnchorPane.setLeftAnchor(subtractionRect, 130.0d);
         anchor.getChildren().add(multiplicationRect);
         AnchorPane.setTopAnchor(multiplicationRect, 190.0d);
         AnchorPane.setLeftAnchor(multiplicationRect, 250.0d);
@@ -240,7 +248,7 @@ public class UserFace extends Application implements EventHandler<ActionEvent>{
         AnchorPane.setLeftAnchor(divisionRect, 190.0d);
         anchor.getChildren().add(zeroRect);
         AnchorPane.setTopAnchor(zeroRect, 510.0d);
-        AnchorPane.setLeftAnchor(zeroRect, 130.0d);
+        AnchorPane.setLeftAnchor(zeroRect, 190.0d);
         anchor.getChildren().add(oneRect);
         AnchorPane.setTopAnchor(oneRect, 310.0d);
         AnchorPane.setLeftAnchor(oneRect, 70.0d);
@@ -313,6 +321,9 @@ public class UserFace extends Application implements EventHandler<ActionEvent>{
         anchor.getChildren().add(decimalRect);
         AnchorPane.setTopAnchor(decimalRect, 510.0);
         AnchorPane.setLeftAnchor(decimalRect, 70.0);
+        anchor.getChildren().add(clearRect);
+        AnchorPane.setTopAnchor(clearRect, 510.0d);
+        AnchorPane.setLeftAnchor(clearRect, 250.0d);
         
 
 
@@ -403,6 +414,9 @@ public class UserFace extends Application implements EventHandler<ActionEvent>{
         anchor.getChildren().add(decimal);
         AnchorPane.setTopAnchor(decimal, 510.0d);
         AnchorPane.setLeftAnchor(decimal, 70.0d);
+        anchor.getChildren().add(clear);
+        AnchorPane.setTopAnchor(clear, 510.0d);
+        AnchorPane.setLeftAnchor(clear, 250.0d);
         
 
         //scene = new Scene(grid, 300, 600, Color.BLACK);
@@ -542,6 +556,11 @@ public class UserFace extends Application implements EventHandler<ActionEvent>{
         TranslateTransition translate_closeParenthesesRect = new TranslateTransition();  
         translate_closeParenthesesRect.setNode(closeParenthesesRect); 
 
+        TranslateTransition translate_clear = new TranslateTransition();
+        translate_clear.setNode(clear);
+        TranslateTransition translate_clearRect = new TranslateTransition();  
+        translate_clearRect.setNode(clearRect); 
+
         Media media_classic = new Media(Paths.get("minecraft_click.mp3").toUri().toString());
         MediaPlayer mediaPlayer_classic = new MediaPlayer(media_classic);  
 
@@ -635,6 +654,9 @@ public class UserFace extends Application implements EventHandler<ActionEvent>{
         closeParenthesesRect.setOnMouseEntered(event -> {
             move(translate_closeParentheses, translate_closeParenthesesRect, closeParentheses, closeParenthesesRect);
             });
+        clearRect.setOnMouseEntered(event -> {
+        move(translate_clear, translate_clearRect, clear, clearRect);
+        });
 
         addition.setOnMouseClicked(event-> {
             mediaPlayer_classic.play();
@@ -726,7 +748,12 @@ public class UserFace extends Application implements EventHandler<ActionEvent>{
 
     @Override
     public void handle(ActionEvent event ) {
-        if (event.getSource() != equals && event.getSource() != translate) {
+        if (event.getSource() != equals && event.getSource() != translate && event.getSource() != pun) {
+            if(isPun) {
+                textbox.setText("");
+                input = "";
+                isPun = false;
+            }
             String currentInput = event.getSource().toString();
             input += event.getSource().toString().substring(currentInput.indexOf("'") + 1, currentInput.lastIndexOf("'"));
             textbox.setText(input);
@@ -784,20 +811,15 @@ public class UserFace extends Application implements EventHandler<ActionEvent>{
             Random randy = new Random();
             int pun = randy.nextInt(puns.length);
             textbox.setText(puns[pun]);
-            
+            isPun = true;
         }
         if (event.getSource() == equals) {
             theRealMath.getInput(input);
             textbox.setText(theRealMath.isValid());
         }
-        if (event.getSource() == addition) {
-            System.out.println(addition.getLayoutX() + "| x");
-            System.out.println(addition.getLayoutY() + "| y");
-            System.out.println(allButtons.length);
-        }
-        if (event.getSource() == equals) {
-            System.out.println(equals.getLayoutX() + "| x");
-            System.out.println(equals.getLayoutY() + "| y");
+        if (event.getSource() == clear) {
+            textbox.setText("");
+            input = "";
         }
     }
 
