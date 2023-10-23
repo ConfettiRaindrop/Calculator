@@ -818,8 +818,9 @@ public class UserFace extends Application implements EventHandler<ActionEvent>{
             isPun = true;
         }
         if (event.getSource() == equals) {
-            theRealMath.getInput(input);
-            textbox.setText(theRealMath.isValid());
+            System.out.println(input);
+            String result = "" + Translator.calculate(input);
+            textbox.setText(result);
         }
         if (event.getSource() == clear) {
             textbox.setText("");

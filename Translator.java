@@ -2,7 +2,7 @@ import java.util.Stack;
 
 public class Translator {
     public static double calculate(String s) {
-        s = changeSqrt(s);
+
         Stack<Double> numStack = new Stack<>();
         Stack<Character> opStack = new Stack<>();
 
@@ -12,7 +12,7 @@ public class Translator {
                 double num = 0;
                 double decimalPlace = 1.0; 
                 boolean isDecimal = false; // checks for decimal num - keep forgetting that java's bools are all lowers
-                while (i < s.length()&&(Character.isDigit(s.charAt(i))|| s.charAt(i) == '.')) {
+                while ((i < s.length())&&(Character.isDigit(s.charAt(i))|| s.charAt(i) == '.')) {
                     if (s.charAt(i) == '.') {
                         isDecimal = true;
                     } else if (isDecimal) {
@@ -147,7 +147,7 @@ public class Translator {
 
     public static void main(String[] args) {
         //String expression = "2*(3+4)-5*(6/2)";
-        String expression = "8*2cos(8*(6/2))+6";
+        String expression = "3+2";
         //expression = changeSqrt(expression); - calling in calculate func. better bc camilla will use isValid() to get result
         System.out.println("Result: " + calculate(expression));
     //make it for doubles - done 
