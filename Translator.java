@@ -4,6 +4,7 @@ public class Translator {
     public static int calculate(String s) {
         Stack<Integer> numStack = new Stack<>();
         Stack<Character> opStack = new Stack<>();
+        public static String input; 
 
         for (int i = 0; i < s.length(); i++) {
             char c = s.charAt(i);
@@ -78,8 +79,12 @@ public class Translator {
         }
         return 0;
     }
-    public String isValid(String input){
+    public String isValid(){
       return Integer.toString(calculate(input)); 
+    }
+
+    public getInput(String strInput){
+        input = strInput; 
     }
 
     public static void main(String[] args) {
