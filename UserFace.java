@@ -425,9 +425,9 @@ public class UserFace extends Application implements EventHandler<ActionEvent>{
         primaryStage.setResizable(false);
         primaryStage.show();
 
-        Media media = new Media ("https://ia801509.us.archive.org/10/items/Rick_Astley_Never_Gonna_Give_You_Up/Rick_Astley_Never_Gonna_Give_You_Up.mp4");
-        MediaPlayer mediaPlayer = new MediaPlayer(media);  
-        mediaPlayer.setAutoPlay(true);  
+        // Media media = new Media ("https://ia801509.us.archive.org/10/items/Rick_Astley_Never_Gonna_Give_You_Up/Rick_Astley_Never_Gonna_Give_You_Up.mp4");
+        // MediaPlayer mediaPlayer = new MediaPlayer(media);  
+        // mediaPlayer.setAutoPlay(true);  
 
 
         TranslateTransition translate_addition = new TranslateTransition();  
@@ -560,23 +560,23 @@ public class UserFace extends Application implements EventHandler<ActionEvent>{
         TranslateTransition translate_clearRect = new TranslateTransition();  
         translate_clearRect.setNode(clearRect); 
 
-        Media media_classic = new Media(Paths.get("minecraft_click.mp3").toUri().toString());
-        MediaPlayer mediaPlayer_classic = new MediaPlayer(media_classic);  
+        // Media media_classic = new Media(Paths.get("minecraft_click.mp3").toUri().toString());
+        // MediaPlayer mediaPlayer_classic = new MediaPlayer(media_classic);  
 
-        Media media_nice = new Media(Paths.get("-click-nice_1.mp3").toUri().toString());
-        MediaPlayer mediaPlayer_nice = new MediaPlayer(media_nice);  
+        // Media media_nice = new Media(Paths.get("-click-nice_1.mp3").toUri().toString());
+        // MediaPlayer mediaPlayer_nice = new MediaPlayer(media_nice);  
 
-        Media media_blow = new Media(Paths.get("blow2_1.mp3").toUri().toString());
-        MediaPlayer mediaPlayer_blow = new MediaPlayer(media_blow);  
+        // Media media_blow = new Media(Paths.get("blow2_1.mp3").toUri().toString());
+        // MediaPlayer mediaPlayer_blow = new MediaPlayer(media_blow);  
 
-        Media media_ball = new Media(Paths.get("came-in-like-a-wrecking-ball.mp3").toUri().toString());
-        MediaPlayer mediaPlayer_ball = new MediaPlayer(media_ball);  
+        // Media media_ball = new Media(Paths.get("came-in-like-a-wrecking-ball.mp3").toUri().toString());
+        // MediaPlayer mediaPlayer_ball = new MediaPlayer(media_ball);  
 
-        Media media_last_of_us = new Media(Paths.get("the-last-of-us-clicker-sound-dlive.mp3").toUri().toString());
-        MediaPlayer mediaPlayer_last_of_us = new MediaPlayer(media_last_of_us);  
+        // Media media_last_of_us = new Media(Paths.get("the-last-of-us-clicker-sound-dlive.mp3").toUri().toString());
+        // MediaPlayer mediaPlayer_last_of_us = new MediaPlayer(media_last_of_us);  
 
-        Media media_sus = new Media(Paths.get("totally-not-a-suspicious-button.mp3").toUri().toString());
-        MediaPlayer mediaPlayer_sus = new MediaPlayer(media_sus);  
+        // Media media_sus = new Media(Paths.get("totally-not-a-suspicious-button.mp3").toUri().toString());
+        // MediaPlayer mediaPlayer_sus = new MediaPlayer(media_sus);  
 
         additionRect.setOnMouseEntered(event -> {
             move(translate_addition, translate_additionRect, addition, additionRect);
@@ -657,90 +657,90 @@ public class UserFace extends Application implements EventHandler<ActionEvent>{
         move(translate_clear, translate_clearRect, clear, clearRect);
         });
 
-        addition.setOnMouseClicked(event-> {
-            mediaPlayer_classic.play();
-        });
-        subtraction.setOnMouseClicked(event-> {
-            mediaPlayer_classic.play();
-        });
-        multiplication.setOnMouseClicked(event-> {
-            mediaPlayer_classic.play();
-        });
-        division.setOnMouseClicked(event-> {
-            mediaPlayer_classic.play();
-        });
-        equals.setOnMouseClicked(event-> {
-            mediaPlayer_nice.play();
-        });
-        zero.setOnMouseClicked(event-> {
-            mediaPlayer_classic.play();
-        });
-        one.setOnMouseClicked(event-> {
-            mediaPlayer_classic.play();
-        });
-        two.setOnMouseClicked(event-> {
-            mediaPlayer_classic.play();
-        });
-        three.setOnMouseClicked(event-> {
-            mediaPlayer_classic.play();
-        });
-        four.setOnMouseClicked(event-> {
-            mediaPlayer_classic.play();
-        });
-        five.setOnMouseClicked(event-> {
-            mediaPlayer_classic.play();
-        });
-        six.setOnMouseClicked(event-> {
-            mediaPlayer_classic.play();
-        });
-        seven.setOnMouseClicked(event-> {
-            mediaPlayer_classic.play();
-        });
-        eight.setOnMouseClicked(event-> {
-            mediaPlayer_classic.play();
-        });
-        nine.setOnMouseClicked(event-> {
-            mediaPlayer_classic.play();
-        });
-        sin.setOnMouseClicked(event-> {
-            mediaPlayer_classic.play();
-        });
-        cos.setOnMouseClicked(event-> {
-            mediaPlayer_classic.play();
-        });
-        tan.setOnMouseClicked(event-> {
-            mediaPlayer_classic.play();
-        });
-        root.setOnMouseClicked(event-> {
-            mediaPlayer_classic.play();
-        });
-        log.setOnMouseClicked(event-> {
-            mediaPlayer_classic.play();
-        });
-        exponent.setOnMouseClicked(event-> {
-            mediaPlayer_sus.play();
-        });
-        pi.setOnMouseClicked(event-> {
-            mediaPlayer_classic.play();
-        });
-        e.setOnMouseClicked(event-> {
-            mediaPlayer_classic.play();
-        });
-        openParentheses.setOnMouseClicked(event-> {
-            mediaPlayer_classic.play();
-        });
-        closeParentheses.setOnMouseClicked(event-> {
-            mediaPlayer_classic.play();
-        });
-        pun.setOnMouseClicked(event-> {
-            mediaPlayer_blow.play();
-        });
-        translate.setOnMouseClicked(event-> {
-            mediaPlayer_last_of_us.play();
-        });
-        decimal.setOnMouseClicked(event-> {
-            mediaPlayer_ball.play();
-        });
+        // addition.setOnMouseClicked(event-> {
+        //     mediaPlayer_classic.play();
+        // });
+        // subtraction.setOnMouseClicked(event-> {
+        //     mediaPlayer_classic.play();
+        // });
+        // multiplication.setOnMouseClicked(event-> {
+        //     mediaPlayer_classic.play();
+        // });
+        // division.setOnMouseClicked(event-> {
+        //     mediaPlayer_classic.play();
+        // });
+        // equals.setOnMouseClicked(event-> {
+        //     mediaPlayer_nice.play();
+        // });
+        // zero.setOnMouseClicked(event-> {
+        //     mediaPlayer_classic.play();
+        // });
+        // one.setOnMouseClicked(event-> {
+        //     mediaPlayer_classic.play();
+        // });
+        // two.setOnMouseClicked(event-> {
+        //     mediaPlayer_classic.play();
+        // });
+        // three.setOnMouseClicked(event-> {
+        //     mediaPlayer_classic.play();
+        // });
+        // four.setOnMouseClicked(event-> {
+        //     mediaPlayer_classic.play();
+        // });
+        // five.setOnMouseClicked(event-> {
+        //     mediaPlayer_classic.play();
+        // });
+        // six.setOnMouseClicked(event-> {
+        //     mediaPlayer_classic.play();
+        // });
+        // seven.setOnMouseClicked(event-> {
+        //     mediaPlayer_classic.play();
+        // });
+        // eight.setOnMouseClicked(event-> {
+        //     mediaPlayer_classic.play();
+        // });
+        // nine.setOnMouseClicked(event-> {
+        //     mediaPlayer_classic.play();
+        // });
+        // sin.setOnMouseClicked(event-> {
+        //     mediaPlayer_classic.play();
+        // });
+        // cos.setOnMouseClicked(event-> {
+        //     mediaPlayer_classic.play();
+        // });
+        // tan.setOnMouseClicked(event-> {
+        //     mediaPlayer_classic.play();
+        // });
+        // root.setOnMouseClicked(event-> {
+        //     mediaPlayer_classic.play();
+        // });
+        // log.setOnMouseClicked(event-> {
+        //     mediaPlayer_classic.play();
+        // });
+        // exponent.setOnMouseClicked(event-> {
+        //     mediaPlayer_sus.play();
+        // });
+        // pi.setOnMouseClicked(event-> {
+        //     mediaPlayer_classic.play();
+        // });
+        // e.setOnMouseClicked(event-> {
+        //     mediaPlayer_classic.play();
+        // });
+        // openParentheses.setOnMouseClicked(event-> {
+        //     mediaPlayer_classic.play();
+        // });
+        // closeParentheses.setOnMouseClicked(event-> {
+        //     mediaPlayer_classic.play();
+        // });
+        // pun.setOnMouseClicked(event-> {
+        //     mediaPlayer_blow.play();
+        // });
+        // translate.setOnMouseClicked(event-> {
+        //     mediaPlayer_last_of_us.play();
+        // });
+        // decimal.setOnMouseClicked(event-> {
+        //     mediaPlayer_ball.play();
+        // });
 
 
     }
