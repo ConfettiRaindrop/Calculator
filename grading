@@ -1,0 +1,74 @@
+Project 2
+-------------------------------------------------------------------------------
+
+Contributor Code Docu Adj. Score
+----------- ---- ---- ---- -----
+Camila       530   26   +2 18/20 A
+Sindhura     158        -4 12/20 D
+Sofiya       684        +2 18/20 A
+
+-------------------------------------------------------------------------------
+
+Rubric:
+1. Baseline:   15
+2. Creativity: +3       fleeing buttons, sounds, puns
+3. Design:     +2       nice gui, button styling
+   Design:     -2       calculator doesn't work
+4. Clean code: +0
+5. Document:   +0
+   Discount:   -2       for having three contributors
+   Total:      16
+
+-------------------------------------------------------------------------------
+
+Comments:
+* Overall
+- I ran into a bunch of issues trying to run the program:
+  - The first issue is that it doesn't currently compile. Sindhura, it looks
+    like you checked in a bunch of changes without testing them first. That's
+    not great.
+  - I was able to compile after syncing back to the project due date. But it
+    gives me "invalid input" every time I hit "=". Sindhura, it looks like this
+    is your part of the code.
+
+* UserFace.java
+- I absolutely love your UI innovations. It's impressive that you were able to
+  take the squirming buttons from a crazy idea to an actual implementation.
+  Very creative.
+- Having different sounds is a nice touch too.
+- But the code is yikes! As a rule of thumb, if you're cutting and pasting,
+  you're doing something wrong. There are lots of opportunities here to
+  generalize, and it would make your code both shorter and more readable.
+  Ultimately, that would also make it more maintainable.
+
+* Translator.java
+- It looks like there's some reasonable code here, but it's hard to follow and
+  it doesn't seem to work. I finally gave up on trying to get it to run.
+  Sindhura, if you'd like to show me the fixed code sometime and talk me
+  through how it works.
+
+-------------------------------------------------------------------------------
+
+Generic fine print:
+a. "Code" shows the approximate lines of code contributed. This is just a line
+   count of "git blame" and shouldn't be taken too seriously. Still, in many
+   cases it gives quick sniff test of who did how much work.
+b. "Docu" is the same thing applied to the documentation if it is in markdown.
+c. "Adj." is a credit adjustment for contributors who did significantly more or
+   less than than average contributor. Credit adjustments sum to 0.
+d. "Score" is the final score, taken by adding the lines from the rubric and
+   the credit adjustment.
+
+1. "Baseline" means all requirements are met. This gives you a C if it's all you
+   have.
+2. "Creativity" is a measure of how much tought and energy you put into going
+   beyond the minimum requirements.
+   Points can be deducted here if some requirements are missing.
+3. "Design" gives extra points for the look of the UI and overall usability.
+   Points can be deducted here if there are errors or crashes.
+4. "Clean code" indicates how easy the code is to read. Good code consists of
+   short functions with clear names, organized in a coherent way.
+   Points can be deducted here if code is redundant or especially messy.
+5. "Document" gives extra points if the documentation is especially clear or
+   comprehensive.
+   Points can be deducted here if the documentation is missing or insufficient.
