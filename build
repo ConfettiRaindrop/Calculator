@@ -1,0 +1,8 @@
+#!/bin/bash
+
+FX_PATH=/usr/lib/jvm/java-21-openjfx/lib
+FX_LIBS=javafx.graphics,javafx.controls,javafx.media
+FLAGS="--module-path $FX_PATH --add-modules $FX_LIBS"
+
+javac $FLAGS *.java
+java $FLAGS UserFace
