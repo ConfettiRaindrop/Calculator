@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Translator",
+            "request": "launch",
+            "mainClass": "Translator",
+            "projectName": "Calculator_fdb83665"
+        },
+        {
+            "type": "java",
+            "name": "UserFace",
+            "request": "launch",
+            "mainClass": "UserFace",
+            "projectName": "Calculator_fdb83665"
+        },
+        {
+            "type": "java",
             "name": "Current File",
             "request": "launch",
             "mainClass": "${file}"
